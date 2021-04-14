@@ -1,10 +1,13 @@
-﻿using System;
+﻿using BundleTransformer.Core.Builders;
+using BundleTransformer.Core.Bundles;
+using BundleTransformer.Core.Orderers;
+using BundleTransformer.Core.Resolvers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.UI;
-
 namespace SoundHive
 {
     public class BundleConfig
@@ -12,6 +15,15 @@ namespace SoundHive
         // For more information on Bundling, visit https://go.microsoft.com/fwlink/?LinkID=303951
         public static void RegisterBundles(BundleCollection bundles)
         {
+            var nullBulider = new NullBuilder();
+            var nullOrderer = new NullOrderer();
+
+            BundleResolver.Current = new CustomBundleResolver();
+            var commonStyleBundle = new CustomStyleBundle("~/Bundle/sass");
+
+            commonStyleBundle.Include("~/css/main.scss");
+            commonStyleBundle.Orderer = nullOrderer;
+            bundles.Add(commonStyleBundle);
             bundles.Add(new ScriptBundle("~/bundles/WebFormsJs").Include(
                             "~/Scripts/WebForms/WebForms.js",
                             "~/Scripts/WebForms/WebUIValidation.js",
@@ -33,6 +45,9 @@ namespace SoundHive
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
+            bundles.Add(new ScriptBundle("~/bundles/soundhive").Include(
+                "~/Scripts/Site.js"
+                    ));
         }
     }
 }
