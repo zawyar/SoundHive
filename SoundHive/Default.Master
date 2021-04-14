@@ -94,7 +94,7 @@
 </section>
 
 
-    <section class="content">
+    <section class="">
 
   
       <form runat="server">
@@ -119,13 +119,13 @@
 
             </Scripts>
         </asp:ScriptManager>
-       <div class="container body-content">
+       
+        
+    </form>
+  <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
            </div>
-        
-    </form>
-  
    
    
   

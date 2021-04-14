@@ -3,18 +3,20 @@
 	<webopt:bundlereference runat="server" path="~/Content/EditProfile" />
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-	<div class="container">
+	<div class="container" style="box-sizing:border-box;">
+		<div>
+				<h1 class="title">Edit Profile</h1>
 
-	<h1 class="title">Modifier mon profil</h1>
+		</div>
 
 	<div class="grid">
 		<div class="form-group a">
-			<label for="name">Nom</label>
+			<label for="name">Name</label>
 			<input id="name" type="text">
 		</div>
 
 		<div class="form-group b">
-			<label for="first-name">Prénom</label>
+			<label for="first-name">First Name</label>
 			<input id="first-name" type="text">
 		</div>
 
@@ -24,7 +26,7 @@
 		</div>
 
 		<div class="form-group phone-group">
-			<label for="phone">Téléphone (mobile)</label>
+			<label for="phone">Telephone</label>
 			<input id="phone" type="text">
 		</div>
 
@@ -34,37 +36,25 @@
 		</div>
 
 		<div class="form-group">
-			<label for="address">Adresse</label>
+			<label for="address">Address</label>
 			<input id="address" type="text">
 		</div>
 
 		<div class="form-group">
-			<label for="city">Ville</label>
+			<label for="city">City</label>
 			<input id="city" type="text">
 		</div>
 
 		<div class="form-group">
-			<label for="zip">Code postal</label>
+			<label for="zip">Postal Code</label>
 			<input id="zip" type="text">
 		</div>
 	</div>
 
-	<div class="checkboxes">
-
-		<div class="checkbox-group">
-			<input id="newsletter" type="checkbox">
-			<label for="newsletter">Je souhaite recevoir la newsletter</label>
-		</div>
-
-		<div class="checkbox-group">
-			<input id="newsletter-partners" type="checkbox">
-			<label for="newsletter-partners">Je souhaite recevoir la newsletter des partenaires</label>
-		</div>
-
-	</div>
+	
 
 	<div class="button-container">
-		<button class="button">Enregister les modifications</button>
+		<button class="button">Register Modifications</button>
 	</div>
 </div>
 </asp:Content>
