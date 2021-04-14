@@ -7,10 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-namespace SoundHive
-{
-    public partial class Login
-    {
+namespace SoundHive {
+    
+    
+    public partial class Login1 {
     }
 }
