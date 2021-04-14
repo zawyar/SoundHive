@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SoundHive.Login1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <webopt:bundlereference runat="server" path="~/Content/css/Login" />
+<asp:Content ID="Content1" ContentPlaceHolderID="Csscontent" runat="server">
+    <webopt:bundlereference runat="server" path="~/Content/Login" />
+
 </asp:Content>
 
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <div id="header">
   <div class="logo"></div>
 </div>
@@ -21,6 +23,7 @@
     <a href="#">Sign Up</a><br /><a href="#">Forgot Password?</a>
   </div>
 </div>
+    </asp:Content>
 
 
 
