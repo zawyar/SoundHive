@@ -149,11 +149,9 @@
       <DependentUpon>Site.css</DependentUpon>
     </Content>
     <Content Include="Content\Contact\Contact.css" />
-    <Content Include="Default.aspx" />
     <Content Include="ArtistDescription.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Content\UploadSongs\UploadSongs.css" />
-    <Content Include="Default.aspx" />
     <Content Include="edit-profile.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -174,7 +172,6 @@
     <Content Include="Scripts\Site.js" />
     <Content Include="Search.aspx" />
     <Content Include="UploadSongs.aspx" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="Content\Site.scss" />
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
@@ -238,8 +235,6 @@
     <Compile Include="Browse.aspx.designer.cs">
       <DependentUpon>Browse.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -327,6 +322,7 @@
     </Compile>
     <Compile Include="UploadSongs.aspx.designer.cs">
       <DependentUpon>UploadSongs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Guest.Master.cs">
       <DependentUpon>Guest.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -348,13 +344,7 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
+    
     <Compile Include="Introduction.aspx.cs">
       <DependentUpon>Introduction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
