@@ -14,11 +14,11 @@
        <div id="introduction">
            <h1 id="introTitle">Introduction</h1>
            </div>
-           <p id="intropara">
-                This music app was the brain child of three morons. One of the founders, who was somewhat lit, suggested the name Spnotify, to commemorate ripping off spotify, but the other two brain dead 
-               founders decided against it and went with SoundHive. Thus, though reluctantly, SoundHive came into being.
-               This site holds a vast library of Rick Rolls and We're no strangers to love You know the rules and so
-               do I A full commitment's what I'm thinking of You wouldn't get this from any other guy I just wanna tell you how I'm feeling Gotta make you understand
+           <pre id="intropara">
+    This music app was the brain child of three morons. One of the founders, who was somewhat lit, suggested the name Spnotify, to commemorate ripping off spotify, but the other two brain dead 
+    founders decided against it and went with SoundHive. Thus, though reluctantly, SoundHive came into being.
+    This site holds a vast library of Rick Rolls and We're no strangers to love You know the rules and so
+    do I A full commitment's what I'm thinking of You wouldn't get this from any other guy I just wanna tell you how I'm feeling Gotta make you understand
     Never gonna give you up
     Never gonna let you down
     Never gonna run around and desert you
@@ -34,8 +34,8 @@
     Never gonna give you up
     Never gonna let you down
     Never gonna run around and desert you
-        Never gonna make you cry
+    Never gonna make you cry
     Never gonna say goodbye
-           </p>
+           </pre>
        </div>
 </asp:Content>
