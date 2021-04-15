@@ -10,7 +10,7 @@
 
 namespace SoundHive
 {
-    public partial class Contact
+    public partial class WebForm1
     {
     }
 }
