@@ -101,7 +101,7 @@
   width: 15%; }
 
 .content__middle {
-  width: 70%; }
+  width: 85%; }
 
 .content__right {
   width: 15%; }
@@ -396,7 +396,7 @@
     height: 320px;
     border-bottom: 1px solid #282828;
     position: relative;
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/spotify_img_bground.png);
+    background-image: url(https://images.thebrag.com/td/uploads/2021/02/rick-astley.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -416,7 +416,7 @@
     height: 100%;
     z-index: 0;
     opacity: 0.15;
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/g-eazy.png);
+    background-image: url(https://images.thebrag.com/td/uploads/2021/02/rick-astley.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top; }

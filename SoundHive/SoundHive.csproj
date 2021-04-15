@@ -122,27 +122,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AlbumDescription.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cards.css" />
     <Content Include="Content\EditProfile\EditProfile.css" />
-<<<<<<< Updated upstream
     <Content Include="Content\Login\Login.css" />
-=======
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\nouislider.min.css" />
->>>>>>> Stashed changes
     <Content Include="Content\Site.css" />
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
     <Content Include="ArtistDescription.aspx" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="edit-profile.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\ionicons.svg" />
+    <Content Include="GenreDescription.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -200,6 +201,13 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumDescription.aspx.cs">
+      <DependentUpon>AlbumDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlbumDescription.aspx.designer.cs">
+      <DependentUpon>AlbumDescription.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -223,12 +231,26 @@
     <Compile Include="ArtistDescription.aspx.designer.cs">
       <DependentUpon>ArtistDescription.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="edit-profile.aspx.cs">
       <DependentUpon>edit-profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="edit-profile.aspx.designer.cs">
       <DependentUpon>edit-profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenreDescription.aspx.cs">
+      <DependentUpon>GenreDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenreDescription.aspx.designer.cs">
+      <DependentUpon>GenreDescription.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

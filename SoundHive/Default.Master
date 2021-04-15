@@ -132,7 +132,6 @@
 
             </Scripts>
         </asp:ScriptManager>
-<<<<<<< Updated upstream
        
         
     </form>
@@ -144,15 +143,13 @@
    
    
   
-  
+          </form>
+
   
 
   
 </section>
         
-=======
-        </form>
->>>>>>> Stashed changes
        
 </body>
 </html>
