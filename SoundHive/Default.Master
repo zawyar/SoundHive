@@ -97,8 +97,21 @@
     <section class="">
 
   
-      <form runat="server">
-        <asp:ScriptManager runat="server">
+    
+  <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+           </div>
+   
+   
+  
+  
+  
+
+  
+</section>
+    <form runat="server">
+          <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>
@@ -119,6 +132,7 @@
 
             </Scripts>
         </asp:ScriptManager>
+<<<<<<< Updated upstream
        
         
     </form>
@@ -136,6 +150,9 @@
   
 </section>
         
+=======
+        </form>
+>>>>>>> Stashed changes
        
 </body>
 </html>
