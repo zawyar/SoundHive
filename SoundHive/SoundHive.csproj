@@ -123,6 +123,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AlbumDescription.aspx" />
+    <Content Include="Browse.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -133,12 +134,19 @@
     <Content Include="Content\Login\Login.css" />
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\nouislider.min.css" />
+    <Content Include="Content\Browse\Browse.css" />
+    <Content Include="Content\EditProfile\EditProfile.css" />
+    <Content Include="Content\Login\Login.css" />
+    <Content Include="Content\Registration\Registration.css" />
+    <Content Include="Content\Search\Search.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
     <Content Include="ArtistDescription.aspx" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="Content\UploadSongs\UploadSongs.css" />
+    <Content Include="Default.aspx" />
     <Content Include="edit-profile.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -155,7 +163,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Login.aspx" />
     <Content Include="Scripts\nouislider.min.js" />
+    <Content Include="Registration.aspx" />
     <Content Include="Scripts\Site.js" />
+    <Content Include="Search.aspx" />
+    <Content Include="UploadSongs.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="Content\Site.scss" />
     <None Include="compilerconfig.json" />
@@ -217,6 +228,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Browse.aspx.cs">
+      <DependentUpon>Browse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Browse.aspx.designer.cs">
+      <DependentUpon>Browse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -263,6 +281,20 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -283,6 +315,13 @@
     </Compile>
     <Compile Include="Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UploadSongs.aspx.cs">
+      <DependentUpon>UploadSongs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UploadSongs.aspx.designer.cs">
+      <DependentUpon>UploadSongs.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

@@ -16,6 +16,7 @@
     <asp:ContentPlaceHolder ID="CssContent" runat="Server"></asp:ContentPlaceHolder>
 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="CssContent" runat="Server"></asp:ContentPlaceHolder>
 
 </head>
 <body>

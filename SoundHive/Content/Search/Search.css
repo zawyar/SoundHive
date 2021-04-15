@@ -1,0 +1,8 @@
+﻿.h1{
+    color:white;
+}
+.tracks {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 15px;
+}
