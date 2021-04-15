@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Guest.Master.cs" Inherits="SoundHive.Site2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>SoundHive</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/Guest Master" />
+</head>
+
+<body>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    <form id="form1" runat="server">
+  
+      <div class="page-flows">
+  
+        <span class="flow">
+          <i class="ion-chevron-left"></i>
+        </span>
+    
+        <span class="flow">
+          <i class="ion-chevron-right disabled"></i>
+        </span>
+    
+  </div>
+            
+    </form>
+    
+</body>
+</html>
