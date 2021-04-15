@@ -15,9 +15,9 @@
 	font-size: 24px;
 	line-height: 28px;
 	font-weight: bold;
-	color: #374151;
+	color: #ffffff;
 	padding-bottom: 11px;
-	border-bottom: 1px solid #d7dbdf;
+	border-bottom: 1px solid #1ed760;
 }
 
 .form-group {
@@ -28,7 +28,7 @@
 
 	.textarea-group label,
 	.form-group label {
-		color: #374151;
+		color: #ffffff;
 		font-size: 16px;
 		line-height: 19px;
 		margin-bottom: 10px;
@@ -48,7 +48,7 @@
 
 		.form-group [type]:focus,
 		.textarea-group textarea:focus {
-			border-color: #5850eb;
+			border-color: #1ed760;
 		}
 
 .textarea-group {
@@ -67,7 +67,7 @@
 .button {
 	font-weight: bold;
 	line-height: 19px;
-	background: #5850eb;
+	background: #1ed760;
 	border: none;
 	padding: 15px 25px;
 	border-radius: 6px;
@@ -77,11 +77,11 @@
 }
 
 	.button:hover {
-		background: #6e67ee;
+		background: #00ff00;
 	}
 
 	.button:focus {
-		background: #4239e8;
+		background: #00ff00;
 	}
 
 @media screen and (min-width: 768px) {

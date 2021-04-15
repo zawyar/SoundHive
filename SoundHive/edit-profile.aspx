@@ -3,12 +3,10 @@
 	<webopt:bundlereference runat="server" path="~/Content/EditProfile" />
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-	<div class="container" style="box-sizing:border-box;">
-		<div>
+	<div class="" style="box-sizing:border-box;">
 				<h1 class="title">Edit Profile</h1>
 
-		</div>
-
+	<div>
 	<div class="grid">
 		<div class="form-group a">
 			<label for="name">Name</label>
@@ -52,7 +50,7 @@
 	</div>
 
 	
-
+	</div>
 	<div class="button-container">
 		<button class="button">Register Modifications</button>
 	</div>

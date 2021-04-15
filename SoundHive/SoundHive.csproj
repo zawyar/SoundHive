@@ -119,23 +119,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AlbumDescription.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cards.css" />
     <Content Include="Content\EditProfile\EditProfile.css" />
     <Content Include="Content\Guest Master\Guest.css" />
     <Content Include="Content\Introduction\Introduction.css" />
     <Content Include="Content\Login\Login.css" />
+    <Content Include="Content\ionicons.min.css" />
+    <Content Include="Content\nouislider.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
     <Content Include="Content\Contact\Contact.css" />
     <Content Include="Default.aspx" />
+    <Content Include="ArtistDescription.aspx" />
+    <Content Include="Dashboard.aspx" />
     <Content Include="edit-profile.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\ionicons.svg" />
+    <Content Include="GenreDescription.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -146,6 +161,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Login.aspx" />
+    <Content Include="Scripts\nouislider.min.js" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Content\Site.scss" />
     <Content Include="About.aspx" />
@@ -155,6 +171,9 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="fonts\ionicons.eot" />
+    <Content Include="fonts\ionicons.ttf" />
+    <Content Include="fonts\ionicons.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -191,14 +210,37 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlbumDescription.aspx.cs">
+      <DependentUpon>AlbumDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlbumDescription.aspx.designer.cs">
+      <DependentUpon>AlbumDescription.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistDescription.aspx.cs">
+      <DependentUpon>ArtistDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtistDescription.aspx.designer.cs">
+      <DependentUpon>ArtistDescription.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="edit-profile.aspx.cs">
       <DependentUpon>edit-profile.aspx</DependentUpon>
@@ -206,6 +248,13 @@
     </Compile>
     <Compile Include="edit-profile.aspx.designer.cs">
       <DependentUpon>edit-profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenreDescription.aspx.cs">
+      <DependentUpon>GenreDescription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenreDescription.aspx.designer.cs">
+      <DependentUpon>GenreDescription.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
