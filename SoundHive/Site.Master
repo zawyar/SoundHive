@@ -300,18 +300,39 @@
     
   </div>
   
-  <div class="content__middle">
+      <form runat="server">
+             <div class="content__middle">
        
        <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
            
         </div>
+                   </div>
+        <asp:ScriptManager runat="server">
+           
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                
+                <%--Site Scripts--%>
+                <asp:ScriptReference  Path="~/Scripts/nouislider.min.js" />
+
+                <asp:ScriptReference  Path="~/Scripts/Site.js" />
+
+
+            </Scripts>
+        </asp:ScriptManager>
+                  </form>
+
 
   
    
     
-  </div>
+
   
   
   
@@ -379,25 +400,7 @@
   </div>
   
 </section>
-              <form runat="server">
-
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
-                
-                <%--Site Scripts--%>
-                <asp:ScriptReference  Path="~/Scripts/nouislider.min.js" />
-
-                <asp:ScriptReference  Path="~/Scripts/Site.js" />
-
-
-            </Scripts>
-        </asp:ScriptManager>
-                  </form>
+            
 
 </body>
 </html>
