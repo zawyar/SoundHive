@@ -397,7 +397,7 @@
     border-bottom: 1px solid #282828;
     position: relative;
     background-image: url(https://images.thebrag.com/td/uploads/2021/02/rick-astley.jpg);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -547,7 +547,7 @@
     flex-flow: row wrap; }
     .artist__content .overview__artist {
       padding-right: 15px;
-      width: 70%; }
+      width: 85%; }
       .artist__content .overview__artist .latest-release {
         margin-bottom: 30px;
         display: flex;
