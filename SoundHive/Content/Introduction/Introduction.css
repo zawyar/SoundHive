@@ -1,9 +1,4 @@
-﻿body {
-    background: #181818;
-    back font-family: 'Roboto', sans-serif;
-    z-index: -3;
-}
-
+﻿
 .bg-image {
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,23 +13,8 @@
     background-blend-mode: darken;
 }
 
-body a {
-    color: #aaaaaa;
-}
-
-body a:hover {
-    color: #c8c8c8;
- }
 
 
-.header {
-    background: #282828;
-    color: #aaaaaa;
-    padding: 10px;
-    border-bottom: 1px solid #181818;
-    display: flex;
-    flex-flow: row wrap;
-}
 
 #logo {
     padding-left: 20%;
@@ -66,6 +46,7 @@ input[name=login] {
 }
 
 #introTitle {
+    font-family: Montserrat;
     color: white;
     text-align: center;
     padding: 20px;
@@ -75,6 +56,9 @@ input[name=login] {
 #intropara {
     padding-left: 5%;
     padding-right: 5%;
-    color: #969493;
-    font-size: 20px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 5px 5px 10px #000
 }
+
