@@ -5,11 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg-image"></div>
     <div>
-   <section class="header">
-       <img id="logo" src="favicon.ico"/>
-       <h2 id="soundhive">SoundHive</h2>
-       <input name="login" type="submit" value="Home">
-    </section>
+ 
 
        <div id="introduction">
            <h1 id="introTitle">Introduction</h1>
