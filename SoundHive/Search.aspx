@@ -8,8 +8,7 @@
     <div class="h1">
          <h1> Search Results for G-Eazy</h1>
     </div>
-        
-  
+       
    
     <div class="tracks">
 

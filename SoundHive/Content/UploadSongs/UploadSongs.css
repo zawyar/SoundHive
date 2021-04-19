@@ -4,12 +4,14 @@
     color:white;
 }
 .DropDownList {
-    color:black;
+    border-radius: 1000px;
+    color: black;
 }
 .TextB {
-    
+    border-radius:1000px;
 }
 .Button {
+    border-radius: 1000px;
     color: black;
 }
 .Validators{
