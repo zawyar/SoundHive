@@ -300,15 +300,13 @@
     
   </div>
   
-      <form runat="server">
-             <div class="content__middle">
+      <form class="content__middle" runat="server">
        
        <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
            
         </div>
-                   </div>
         <asp:ScriptManager runat="server">
            
             <Scripts>

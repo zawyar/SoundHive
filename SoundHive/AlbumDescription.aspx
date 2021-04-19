@@ -633,15 +633,6 @@
 				
 			</div>
 	 
-		<!-- / -->
-
-	  
-		<!-- / -->
-
-		<!-- About // Coming Soon-->
-		<!--<div role="tabpanel" class="tab-pane" id="artist-about">About</div>-->
-		<!-- / -->
-	</div>
-
+		
   
 </asp:Content>

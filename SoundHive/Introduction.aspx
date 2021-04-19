@@ -14,7 +14,7 @@
        <div id="introduction">
            <h1 id="introTitle">Introduction</h1>
            </div>
-           <pre id="intropara">
+           <p id="intropara">
     This music app was the brain child of three morons. One of the founders, who was somewhat lit, suggested the name Spnotify, to commemorate ripping off spotify, but the other two brain dead 
     founders decided against it and went with SoundHive. Thus, though reluctantly, SoundHive came into being.
     This site holds a vast library of Rick Rolls and We're no strangers to love You know the rules and so
@@ -36,6 +36,6 @@
     Never gonna run around and desert you
     Never gonna make you cry
     Never gonna say goodbye
-           </pre>
+           </p>
        </div>
 </asp:Content>
