@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Guest.Master" AutoEventWireup="true" CodeBehind="Welcome.aspx.cs" Inherits="SoundHive.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <webopt:bundlereference runat="server" path="~/Content/Welcome" />
+    <webopt:bundlereference runat="server" path="~/Content/WelcomeCSS" />
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

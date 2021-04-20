@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Browse.aspx.cs" Inherits="SoundHive.Browse" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CssContent" runat="server">
-	<webopt:bundlereference runat="server" path="~/Content/Browse" />
+	<webopt:bundlereference runat="server" path="~/Content/BrowseCSS" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 	<div style="height:849px;overflow-y:scroll">

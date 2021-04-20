@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="edit-profile.aspx.cs" Inherits="SoundHive.edit_profile" %>
 <asp:Content ID="css" ContentPlaceHolderID="CssContent" runat="server">
-	<webopt:bundlereference runat="server" path="~/Content/EditProfile" />
+	<webopt:bundlereference runat="server" path="~/EditProfile" />
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 	<div class="" style="box-sizing:border-box;">

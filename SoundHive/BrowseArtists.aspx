@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BrowseArtists.aspx.cs" Inherits="SoundHive.BrowseArtists" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CssContent" runat="server">
-	<webopt:bundlereference runat="server" path="~/Content/Browse" />
-	<webopt:bundlereference runat="server" path="~/Content/Cards" />
+	<webopt:bundlereference runat="server" path="~/Content/BrowseCSS" />
+	<webopt:bundlereference runat="server" path="~/Content/CardsCSS" />
 	  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

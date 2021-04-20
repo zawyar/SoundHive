@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GenreDescription.aspx.cs" Inherits="SoundHive.GenreDescription" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="Csscontent" runat="server">
-	<webopt:bundlereference runat="server" path="~/Content/Cards" />
+	<webopt:bundlereference runat="server" path="~/Content/CardsCSS" />
 	  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
 
 
