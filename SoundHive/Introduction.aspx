@@ -1,15 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Guest.Master" AutoEventWireup="true" CodeBehind="Introduction.aspx.cs" Inherits="SoundHive.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <webopt:bundlereference runat="server" path="~/Content/Introduction" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="bg-image"></div>
     <div>
-<<<<<<< Updated upstream
- 
-
-=======
->>>>>>> Stashed changes
        <div id="introduction">
            <h1 id="introTitle">Introduction</h1>
            </div>

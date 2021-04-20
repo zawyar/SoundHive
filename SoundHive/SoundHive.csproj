@@ -135,6 +135,9 @@
     <Content Include="Content\cards.css" />
     <Content Include="Content\EditProfile\EditProfile.css" />
     <Content Include="Content\Guest Master\Guest.css" />
+    <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\rick.png" />
+    <Content Include="Content\Images\rickAstly.png" />
     <Content Include="Content\Introduction\Introduction.css" />
     <Content Include="Content\Login\Login.css" />
     <Content Include="Content\ionicons.min.css" />
@@ -150,6 +153,7 @@
     </Content>
     <Content Include="Content\Contact\Contact.css" />
     <Content Include="ArtistDescription.aspx" />
+    <Content Include="Content\Welcome\Welcome.css" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Content\UploadSongs\UploadSongs.css" />
     <Content Include="edit-profile.aspx" />
@@ -177,6 +181,7 @@
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Introduction.aspx" />
+    <Content Include="Welcome.aspx" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -359,11 +364,17 @@
     <Compile Include="Introduction.aspx.designer.cs">
       <DependentUpon>Introduction.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Welcome.aspx.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Welcome.aspx.designer.cs">
+      <DependentUpon>Welcome.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\App_LocalResources\" />
-    <Folder Include="Content\Images\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>

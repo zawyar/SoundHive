@@ -14,7 +14,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-
 <body>
   <div class="fluid-container">
     <div class="container">
