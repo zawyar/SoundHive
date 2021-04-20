@@ -16,8 +16,7 @@
        <h2 id="soundhive">SoundHive</h2>
        <input name="login" type="submit" value="Home">
     </section>
-    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
+    
     <form id="form1" runat="server">
   
       <div class="page-flows">
@@ -31,6 +30,8 @@
         </span>
     
   </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
             
     </form>
     
