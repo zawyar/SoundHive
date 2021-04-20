@@ -3,10 +3,13 @@
     <webopt:bundlereference runat="server" path="~/Content/UploadSongs" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
+ 
+
+    <div class="center">
+       
     <div>
      <asp:Label ID="Label1" Cssclass="Labels" runat="server" Text="Add an Album"></asp:Label>
-    <asp:TextBox ID="TextBox1" Cssclass="TextB" runat="server"></asp:TextBox>
+    <asp:TextBox ID="Album" Cssclass="TextB" runat="server"></asp:TextBox>
          <br />
         <br />
     <asp:DropDownList Cssclass="DropDownList" ID="DropDownList1" runat="server">
@@ -17,7 +20,11 @@
          <asp:ListItem Text="Up All Night" Value="4"></asp:ListItem>
          <asp:ListItem Text="AM" Value="5"></asp:ListItem>
     </asp:DropDownList>
-        
+         <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator3" 
+        ControlToValidate="Album"
+        runat="server" 
+        ErrorMessage="Please add an album">
+    </asp:RequiredFieldValidator>
     <br />
         <br />
     <asp:Label ID="Label2" Cssclass="Labels" runat="server" Text="Enter Details of Song"></asp:Label>
@@ -26,7 +33,7 @@
     <asp:Label ID="Label3" Cssclass="Labels" runat="server" Text="Title: "></asp:Label>
     <br />
      <asp:TextBox ID="EnterTitle" Cssclass="TextB" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator CssClass="Validator" ID="RequiredFieldValidator1" 
+        <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator1" 
         ControlToValidate="EnterTitle"
         runat="server" 
         ErrorMessage="Please enter title of song">
@@ -37,7 +44,7 @@
     <br />
      <asp:TextBox ID="EnterGenre" Cssclass="TextB" runat="server"></asp:TextBox>
        
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" 
+    <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator2" 
         ControlToValidate="EnterGenre"
         runat="server" 
         ErrorMessage="Please enter genre of song">
@@ -48,6 +55,8 @@
         <br />
     <asp:Button ID="Button1" Cssclass="Button" runat="server" Text="Upload" />
         
-    </div>    
+    </div>  
+
+        </div>
       
 </asp:Content>
