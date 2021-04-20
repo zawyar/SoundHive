@@ -1,13 +1,14 @@
 ﻿body {
 }
+.parent {
+    height: 849px;
+    background: linear-gradient(90deg, rgba(0, 200, 89, 0.8) 0%, rgba(0, 200, 112, 0.8) 57%, rgba(0, 200, 144, 1) 100%);
+}
 .center {
     margin: auto;
-    width: 100%;
-    border: 3px solid green;
-    padding: 10px;
-    position: relative;
-    left: 300px;
-    top: 50px;
+    height:100%;
+    width:50%;
+    padding-top:5%;
 }
 
 .Labels {

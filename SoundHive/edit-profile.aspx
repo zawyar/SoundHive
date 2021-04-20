@@ -10,22 +10,22 @@
 	<div class="grid">
 		<div class="form-group a">
 			<label for="name">Name</label>
-			<input id="name" type="text">
+			<asp:Textbox ID="name" runat="server" ></asp:Textbox>
 		</div>
 
 		<div class="form-group b">
-			<label for="first-name">First Name</label>
-			<input id="first-name" type="text">
+			<label for="firstname">First Name</label>
+			<asp:Textbox ID="firstname"  runat="server"></asp:Textbox>
 		</div>
 
 		<div class="form-group email-group">
 			<label for="email">Email</label>
-			<input id="email" type="text">
+			<asp:Textbox ID="email" runat="server"></asp:Textbox>
 		</div>
 
 		<div class="form-group phone-group">
 			<label for="phone">Telephone</label>
-			<input id="phone" type="text">
+			<asp:Textbox ID="phone" runat="server"></asp:Textbox>
 		</div>
 
 		<div class="textarea-group">
@@ -35,24 +35,24 @@
 
 		<div class="form-group">
 			<label for="address">Address</label>
-			<input id="address" type="text">
+			<asp:Textbox ID="address" runat="server"></asp:Textbox>
 		</div>
 
 		<div class="form-group">
 			<label for="city">City</label>
-			<input id="city" type="text">
+			<asp:Textbox ID="city" runat="server"></asp:Textbox>
 		</div>
 
 		<div class="form-group">
 			<label for="zip">Postal Code</label>
-			<input id="zip" type="text">
+			<asp:Textbox ID="zip" runat="server"></asp:Textbox>
 		</div>
 	</div>
 
 	
 	</div>
 	<div class="button-container">
-		<button class="button">Register Modifications</button>
+		<asp:Button CssClass="button" runat="server" Text="Register Modifications"></asp:Button>
 	</div>
 </div>
 </asp:Content>

@@ -1,29 +1,56 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SoundHive.Login1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="Csscontent" runat="server">
-    <webopt:bundlereference runat="server" path="~/Content/Login" />
+<asp:Content ID="Content1" ContentPlaceHolderID="CssContent" runat="server">
+     <webopt:bundlereference runat="server" path="~/Content/Registration" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+      <link rel="stylesheet" href="style.css">
     
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<div id="header">
-  <div class="logo"></div>
-</div>
-<div id="main">
-  <div class="loginfb"></div>
-  <div class="linel"></div>
-  <div class="liner"></div>
-  <div id="form">
-    <input name="input" placeholder="Username" type="text" /><input name="input" placeholder="Password" type="password" />
-    <h5>
-      Remember
-    </h5>
-    <input class="btn-toggle btn-toggle-round" id="btn-toggle-1" name="remember" type="checkbox" /><label for="btn-toggle-1"></label><input name="login" type="submit" value="Log in" />
-  </div>
-  <div id="footer">
-    <a href="#">Sign Up</a><br /><a href="#">Forgot Password?</a>
-  </div>
-</div>
-    </asp:Content>
 
+  
 
+  <div class="fluid-container">
+    <div class="container">
+      <div class="col-lg-12 row main-section animated jackInTheBox">
+        <div class="col-lg-5 detail-section">
+          <div class="information">
+            <h2 class="heading__h2">Music for everyone.</h2>
+            <h3 class="heading__h3">Premium Subscription</h3>
+            <div class="little-info">
+              <h2 class="heading__h2__1">$9.99 / month</h2>
+              <li>Shuffle play</li>
+              <li>Ad Free</li>
+              <li>Unlimited skips</li>
+              <li>Listen Offline</li>
+              <li>Play any track</li>
+              <li>High Quality Audio</li>
+              <span style="font-size:0.85em;">Lorem ipsum dolor sit amet.</span>
+              <br>
+              <span style="font-size:0.85em;">Lorem ipsum dolor sit amet.</span>
+            </div>
+            <p style="font-size:0.6em; margin:0 auto; padding:0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, odio! Lorem ipsum dolor. Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+        <div class="col-lg-7 form-section">
+          <div class="form-conatiner">
+            <h2 class="heading__h2"><img src="favicon.ico" style="height:5%;width:5%"></img> SoundHive</h2>
+            <p class="links__p"><a href="Login">Sign In</a> | <a href="/Registration" style="font-weight:700;">Sign Up</a></p>
+
+            <br><br>
+              <label for="email">EMAIL</label>
+              <asp:Textbox  ID="email"  runat="server"></asp:Textbox>
+              <label for="name">PASSWORD</label>
+              <asp:Textbox  ID="Textbox2"  runat="server"></asp:Textbox>
+              <br><br>
+              <center><button class="button">Sign In</button></center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</asp:Content>
 

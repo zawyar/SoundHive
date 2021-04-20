@@ -1,6 +1,8 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-
+body {
+	background: linear-gradient(90deg, rgba(14,48,6,1) 0%, rgba(38,241,23,1) 99%);
+}
 
 .container {
 	box-sizing: border-box;

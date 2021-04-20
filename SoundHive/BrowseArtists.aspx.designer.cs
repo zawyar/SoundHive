@@ -10,7 +10,7 @@
 
 namespace SoundHive
 {
-    public partial class WebForm2
+    public partial class BrowseArtists
     {
     }
 }

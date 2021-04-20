@@ -4,10 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
  
-
+    <div class="parent">
     <div class="center">
        
-    <div>
+    
      <asp:Label ID="Label1" Cssclass="Labels" runat="server" Text="Add an Album"></asp:Label>
     <asp:TextBox ID="Album" Cssclass="TextB" runat="server"></asp:TextBox>
          <br />
@@ -56,7 +56,7 @@
     <asp:Button ID="Button1" Cssclass="Button" runat="server" Text="Upload" />
         
     </div>  
-
         </div>
+
       
 </asp:Content>

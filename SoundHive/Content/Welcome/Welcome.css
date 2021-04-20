@@ -3,7 +3,7 @@
     padding: 0px;
     position: relative;
     background: rgb(14,48,6);
-    background: linear-gradient(90deg, rgba(14,48,6,1) 0%, rgba(38,241,23,1) 99%);
+    background: linear-gradient(90deg, rgba(0, 200, 89, 0.8) 0%, rgba(0, 200, 112, 0.8) 57%, rgba(0, 200, 144, 1) 100%);
     overflow: hidden;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -76,7 +76,7 @@ li:hover {
     text-decoration: none;
 }
 
-    a:hover {
+    .button:hover {
         background-color: rgb(255, 255, 255);
         color: rgb(10, 10, 10);
     }

@@ -124,9 +124,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="AlbumDescription.aspx" />
     <Content Include="Browse.aspx" />
+    <Content Include="BrowseAlbums.aspx" />
+    <Content Include="BrowseArtists.aspx" />
+    <Content Include="BrowseGenres.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -178,7 +180,6 @@
     <Content Include="Search.aspx" />
     <Content Include="UploadSongs.aspx" />
     <Content Include="Content\Site.scss" />
-    <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Introduction.aspx" />
     <Content Include="Welcome.aspx" />
@@ -189,6 +190,7 @@
     <Content Include="fonts\ionicons.eot" />
     <Content Include="fonts\ionicons.ttf" />
     <Content Include="fonts\ionicons.woff" />
+    <None Include="Properties\PublishProfiles\soundhive - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -240,6 +242,27 @@
     </Compile>
     <Compile Include="Browse.aspx.designer.cs">
       <DependentUpon>Browse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseAlbums.aspx.cs">
+      <DependentUpon>BrowseAlbums.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BrowseAlbums.aspx.designer.cs">
+      <DependentUpon>BrowseAlbums.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseArtists.aspx.cs">
+      <DependentUpon>BrowseArtists.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BrowseArtists.aspx.designer.cs">
+      <DependentUpon>BrowseArtists.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BrowseGenres.aspx.cs">
+      <DependentUpon>BrowseGenres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BrowseGenres.aspx.designer.cs">
+      <DependentUpon>BrowseGenres.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -349,13 +372,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="Introduction.aspx.cs">
       <DependentUpon>Introduction.aspx</DependentUpon>

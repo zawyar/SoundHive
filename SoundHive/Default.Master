@@ -15,6 +15,14 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <asp:ContentPlaceHolder ID="CssContent" runat="Server"></asp:ContentPlaceHolder>
     <style>
         .header {
@@ -42,12 +50,27 @@
     </style>
 </head>
 <body>
-          <section class="header">
-       <img id="logo" src="favicon.ico" />
-       <h2 id="soundhive">SoundHive</h2>
-       <input name="login" type="submit" value="Home">
-    </section>
-    
+         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a href="/Welcome" class="navbar-brand">
+            <img src="favicon.ico" height="28" alt="CoolBrand">
+        </a>
+             <h2 style="color: white; font-size:25px;">SoundHive</h2>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+            
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a href="/Dashboard" class="nav-item nav-link">Dashboard</a>
+                <a href="/Login" class="nav-item nav-link">Login</a>
+                <a href="/Introduction" class="nav-item nav-link">About</a>
+                <a href="/Contact" class="nav-item nav-link">Contact Us</a>
+            </div>
+        </div>
+    </nav>
 
 
     
@@ -62,7 +85,6 @@
                 
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
-                <asp:ScriptReference  Path="~/Scripts/Site.js" />
 
             </Scripts>
         </asp:ScriptManager>
@@ -72,15 +94,7 @@
             </asp:ContentPlaceHolder>
            </div>
     </form>
-<<<<<<< Updated upstream
- 
 
-  
-
-  
-        
-=======
->>>>>>> Stashed changes
        
 </body>
 </html>
