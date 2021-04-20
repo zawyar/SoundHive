@@ -1,19 +1,37 @@
 ﻿body {
 }
-.Labels{
-    color:white;
+.center {
+    margin: auto;
+    width: 100%;
+    border: 3px solid green;
+    padding: 10px;
+    position: relative;
+    left: 300px;
+    top: 50px;
+}
+
+.Labels {
+    font-size: large;
+    color: white;
 }
 .DropDownList {
+    font-size: large;
     border-radius: 1000px;
     color: black;
 }
 .TextB {
-    border-radius:1000px;
+    font-size: large;
+    border-radius: 1000px;
 }
 .Button {
+    font-size: large;
     border-radius: 1000px;
     color: black;
 }
-.Validators{
-    color:red;
+.Validators {
+    font-size: large;
+}
+.error{
+    color: red;
+    font-size: large;
 }
