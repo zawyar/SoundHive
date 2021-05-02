@@ -42,10 +42,31 @@
             <br><br>
               <label for="name">NAME</label>
               <asp:Textbox  ID="name"  runat="server"></asp:Textbox>
+              <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator3" 
+        ControlToValidate="name"
+        runat="server" 
+        ErrorMessage="Please enter name">
+    </asp:RequiredFieldValidator>
+              <br />
+              <br />
               <label for="email">EMAIL</label>
               <asp:Textbox  ID="email"  runat="server"></asp:Textbox>
+              <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator1" 
+        ControlToValidate="email"
+        runat="server" 
+        ErrorMessage="Please enter email">
+    </asp:RequiredFieldValidator>
+              <br />
+              <br />
               <label for="name">PASSWORD</label>
               <asp:Textbox  ID="Textbox2"  runat="server"></asp:Textbox>
+              <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator2" 
+        ControlToValidate="Textbox2"
+        runat="server" 
+        ErrorMessage="Please enter password">
+    </asp:RequiredFieldValidator>
+              <br />
+              <br />
               <asp:CheckBox runat="server"></asp:CheckBox>
                <span> I agree at <span><b>terms and conditions</b></span></span>
               <br><br>

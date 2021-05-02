@@ -38,8 +38,22 @@
             <br><br>
               <label for="email">EMAIL</label>
               <asp:Textbox  ID="email"  runat="server"></asp:Textbox>
+              <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator3" 
+        ControlToValidate="email"
+        runat="server" 
+        ErrorMessage="Please enter email">
+    </asp:RequiredFieldValidator>
+              <br />
+              <br />
               <label for="name">PASSWORD</label>
               <asp:Textbox  ID="Textbox2"  runat="server"></asp:Textbox>
+              <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator1" 
+        ControlToValidate="Textbox2"
+        runat="server" 
+        ErrorMessage="Please enter password">
+    </asp:RequiredFieldValidator>
+              <br />
+              <br />
               <br><br>
               <center><button class="button">Sign In</button></center>
           </div>
