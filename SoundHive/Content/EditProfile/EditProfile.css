@@ -3,7 +3,9 @@
 body {
 	background: linear-gradient(90deg, rgba(14,48,6,1) 0%, rgba(38,241,23,1) 99%);
 }
-
+#navbarCollapse > div.navbar-nav.ml-auto > a{
+	font-size:1.5rem;
+}
 .container {
 	box-sizing: border-box;
 	width: 100%;

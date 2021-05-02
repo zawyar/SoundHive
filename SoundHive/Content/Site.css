@@ -233,6 +233,10 @@
     border-top: 1px solid #181818; } }
 
 .current-track {
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    right:0px;
   background: #282828;
   padding: 5px 15px;
   display: flex;

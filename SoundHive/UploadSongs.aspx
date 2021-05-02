@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UploadSongs.aspx.cs" Inherits="SoundHive.UploadSongs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CssContent" runat="server">
-    <webopt:bundlereference runat="server" path="~/Content/UploadSongs" />
+    <webopt:bundlereference runat="server" path="~/Content/UploadSongsCSS" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
  

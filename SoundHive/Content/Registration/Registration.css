@@ -2,7 +2,9 @@
     font-family: Montserrat;
     color: #fff;
 }
-
+#navbarCollapse > div.navbar-nav.ml-auto > a {
+    font-size: 1.5rem;
+}
 body {
     background: rgba(0, 205, 89,1);
     background: linear-gradient(90deg, rgba(0, 200, 89, 0.8) 0%, rgba(0, 200, 112, 0.8) 57%, rgba(0, 200, 144, 1) 100%);
