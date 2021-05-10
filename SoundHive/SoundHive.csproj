@@ -124,6 +124,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminDataOverview.aspx" />
     <Content Include="AlbumDescription.aspx" />
     <Content Include="AdminSongs.aspx" />
     <Content Include="Browse.aspx" />
@@ -189,6 +190,7 @@
     <Content Include="Introduction.aspx" />
     <Content Include="AdminOverview.aspx" />
     <Content Include="Welcome.aspx" />
+    <Content Include="Admin.Master" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -233,6 +235,20 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDataOverview.aspx.cs">
+      <DependentUpon>AdminDataOverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDataOverview.aspx.designer.cs">
+      <DependentUpon>AdminDataOverview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AlbumDescription.aspx.cs">
       <DependentUpon>AlbumDescription.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -366,13 +382,6 @@
     <Compile Include="Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin.Master.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin.Master.designer.cs">
-      <DependentUpon>Admin.Master</DependentUpon>
-    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -447,7 +456,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Default.Master" />
     <Content Include="Guest.Master" />
-    <Content Include="Admin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -11,7 +11,7 @@ namespace SoundHive
 {
 
 
-    public partial class SiteMaster
+    public partial class Admin
     {
 
         /// <summary>
