@@ -9,6 +9,7 @@ namespace SoundHive
 {
     public class DAL
     {
+        //Login and Registration of User
         public SqlConnection conn;
         public DAL()
         {

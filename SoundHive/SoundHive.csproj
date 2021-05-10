@@ -126,15 +126,12 @@
   <ItemGroup>
     <Content Include="AdminDataOverview.aspx" />
     <Content Include="AlbumDescription.aspx" />
-    <Content Include="AdminSongs.aspx" />
     <Content Include="Browse.aspx" />
-    <Content Include="AdminAlbums.aspx" />
     <Content Include="BrowseAlbums.aspx" />
-    <Content Include="AdminArtists.aspx" />
     <Content Include="BrowseArtists.aspx" />
-    <Content Include="AdminGenres.aspx" />
     <Content Include="BrowseGenres.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\AdminData\AdminData.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -188,7 +185,6 @@
     <Content Include="Content\Site.scss" />
     <Content Include="Contact.aspx" />
     <Content Include="Introduction.aspx" />
-    <Content Include="AdminOverview.aspx" />
     <Content Include="Welcome.aspx" />
     <Content Include="Admin.Master" />
     <None Include="compilerconfig.json" />
@@ -258,26 +254,12 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="AdminSongs.aspx.cs">
-      <DependentUpon>AdminSongs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminSongs.aspx.designer.cs">
-      <DependentUpon>AdminSongs.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Browse.aspx.cs">
       <DependentUpon>Browse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Browse.aspx.designer.cs">
       <DependentUpon>Browse.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminAlbums.aspx.cs">
-      <DependentUpon>AdminAlbums.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminAlbums.aspx.designer.cs">
-      <DependentUpon>AdminAlbums.aspx</DependentUpon>
     </Compile>
     <Compile Include="BrowseAlbums.aspx.cs">
       <DependentUpon>BrowseAlbums.aspx</DependentUpon>
@@ -286,26 +268,12 @@
     <Compile Include="BrowseAlbums.aspx.designer.cs">
       <DependentUpon>BrowseAlbums.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdminArtists.aspx.cs">
-      <DependentUpon>AdminArtists.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminArtists.aspx.designer.cs">
-      <DependentUpon>AdminArtists.aspx</DependentUpon>
-    </Compile>
     <Compile Include="BrowseArtists.aspx.cs">
       <DependentUpon>BrowseArtists.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BrowseArtists.aspx.designer.cs">
       <DependentUpon>BrowseArtists.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminGenres.aspx.cs">
-      <DependentUpon>AdminGenres.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminGenres.aspx.designer.cs">
-      <DependentUpon>AdminGenres.aspx</DependentUpon>
     </Compile>
     <Compile Include="BrowseGenres.aspx.cs">
       <DependentUpon>BrowseGenres.aspx</DependentUpon>
@@ -430,13 +398,6 @@
     </Compile>
     <Compile Include="Introduction.aspx.designer.cs">
       <DependentUpon>Introduction.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminOverview.aspx.cs">
-      <DependentUpon>AdminOverview.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminOverview.aspx.designer.cs">
-      <DependentUpon>AdminOverview.aspx</DependentUpon>
     </Compile>
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>
