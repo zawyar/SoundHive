@@ -124,7 +124,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminDataAlbums.aspx" />
+    <Content Include="AdminDataArtists.aspx" />
+    <Content Include="AdminDataGenres.aspx" />
     <Content Include="AdminDataOverview.aspx" />
+    <Content Include="AdminDataSongs.aspx" />
     <Content Include="AlbumDescription.aspx" />
     <Content Include="Browse.aspx" />
     <Content Include="BrowseAlbums.aspx" />
@@ -238,12 +242,40 @@
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="AdminDataAlbums.aspx.cs">
+      <DependentUpon>AdminDataAlbums.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDataAlbums.aspx.designer.cs">
+      <DependentUpon>AdminDataAlbums.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDataArtists.aspx.cs">
+      <DependentUpon>AdminDataArtists.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDataArtists.aspx.designer.cs">
+      <DependentUpon>AdminDataArtists.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDataGenres.aspx.cs">
+      <DependentUpon>AdminDataGenres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDataGenres.aspx.designer.cs">
+      <DependentUpon>AdminDataGenres.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminDataOverview.aspx.cs">
       <DependentUpon>AdminDataOverview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminDataOverview.aspx.designer.cs">
       <DependentUpon>AdminDataOverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDataSongs.aspx.cs">
+      <DependentUpon>AdminDataSongs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDataSongs.aspx.designer.cs">
+      <DependentUpon>AdminDataSongs.aspx</DependentUpon>
     </Compile>
     <Compile Include="AlbumDescription.aspx.cs">
       <DependentUpon>AlbumDescription.aspx</DependentUpon>
