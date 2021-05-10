@@ -24,6 +24,8 @@ namespace SoundHive
 				loginCommand.ExecuteNonQuery();
 				int output = Convert.ToInt32(loginCommand.Parameters["@output"].Value);
 				string username;
+				int type;
+				
 				if (output==0)
 				{
 					ErrorLabel.InnerText = "INVALID CREDENTIALS";
@@ -37,12 +39,20 @@ namespace SoundHive
 				{
 					SqlDataReader reader = loginCommand.ExecuteReader();
 					username=reader["Username"].ToString();
+					type = Convert.ToInt32(reader["roll_id"].ToString());
 					reader.Close();
 
 				}
 				Session["username"] = username;
-
-				Response.Redirect("Dashboard.aspx");
+                if (type == 1)
+                {
+					Response.Redirect("AdminOverview.aspx");
+				}
+				else if (type == 2)
+                {
+					Response.Redirect("Dashboard.aspx");
+				}
+				
 
 			}catch(Exception ex)
 			{
