@@ -23,11 +23,8 @@
               <li>Listen Offline</li>
               <li>Play any track</li>
               <li>High Quality Audio</li>
-              <span style="font-size:0.85em;">Lorem ipsum dolor sit amet.</span>
-              <br>
-              <span style="font-size:0.85em;">Lorem ipsum dolor sit amet.</span>
+             
             </div>
-            <p style="font-size:0.6em; margin:0 auto; padding:0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, odio! Lorem ipsum dolor. Lorem ipsum dolor sit amet.</p>
           </div>
         </div>
         <div class="col-lg-7 form-section">
@@ -35,27 +32,30 @@
             <h2 class="heading__h2"><img src="favicon.ico" style="height:5%;width:5%"></img> SoundHive</h2>
             <p class="links__p"><a href="Login">Sign In</a> | <a href="/Registration" style="font-weight:700;">Sign Up</a></p>
 
-            <br><br>
-              <label for="email">EMAIL</label>
+            <br>
+              <label id="ErrorLabel" runat="Server" ></label>
+              
+              <br>
+              <label for="email">EMAIL OR USERNAME</label>
               <asp:Textbox  ID="email"  runat="server"></asp:Textbox>
               <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator3" 
         ControlToValidate="email"
         runat="server" 
-        ErrorMessage="Please enter email">
+        ErrorMessage="Please enter a valid email">
     </asp:RequiredFieldValidator>
               <br />
               <br />
-              <label for="name">PASSWORD</label>
-              <asp:Textbox  ID="Textbox2"  runat="server"></asp:Textbox>
+              <label for="password">PASSWORD</label>
+              <input  id="password"  type="password" runat="server"></input>
               <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator1" 
-        ControlToValidate="Textbox2"
+        ControlToValidate="password"
         runat="server" 
         ErrorMessage="Please enter password">
     </asp:RequiredFieldValidator>
               <br />
               <br />
               <br><br>
-              <center><button class="button">Sign In</button></center>
+              <center><asp:Button ID="SignIn" CssClass="button" runat="server" Text="Sign In" OnClick="SignIn_Click"/></center>
           </div>
         </div>
       </div>

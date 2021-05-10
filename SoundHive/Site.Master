@@ -65,11 +65,9 @@
         
       </span>
       
-      <span class="user__info__name">
+      <span id="username_placeholder" class="user__info__name" runat="server">
       
-        <span class="first">Adam</span>
         
-        <span class="last">Lowenthal</span>
         
       </span>
       

@@ -92,6 +92,15 @@ input[type=text] {
     border-bottom: 2px solid #fff;
 }
 
+input[type=password] {
+    border: none;
+    margin: auto auto 24px auto;
+    min-width: 100%;
+    background: transparent;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
 .button {
     border-radius: 16px;
     padding: 4px 12px;

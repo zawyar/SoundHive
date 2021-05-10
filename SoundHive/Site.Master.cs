@@ -11,6 +11,15 @@ namespace SoundHive
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["username"] == null)
+            {
+                // Response.Redirect("Login.aspx");
+                username_placeholder.InnerText = "Generic User";
+            }
+            else
+            {
+                username_placeholder.InnerText = Convert.ToString(Session["username"]);
+            }
 
         }
     }
