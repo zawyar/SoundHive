@@ -16,7 +16,7 @@
 			<a href="AdminDataSongs" >Manage Songs</a>
 		</li>
 		<li role="presentation">
-			<a href="AdminDataAlbums" >Manage Songs</a>
+			<a href="AdminDataAlbums" >Manage Albums</a>
 		</li>
 			<li role="presentation">
 			<a href="AdminDataArtists" >Manage Users</a>

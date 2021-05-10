@@ -21,8 +21,8 @@ namespace SoundHive
 			{
 				DAL handler = new DAL();
 				SqlCommand loginCommand = handler.PrepareLoginUser(email.Text.Trim(),password.Value);
-				loginCommand.ExecuteNonQuery();
-				int output = Convert.ToInt32(loginCommand.Parameters["@output"].Value);
+				loginCommand.ExecuteScalar();
+				int output = Convert.ToInt32(loginCommand.Parameters["@result"].Value);
 				string username;
 				int type;
 				
@@ -38,18 +38,19 @@ namespace SoundHive
 				else
 				{
 					SqlDataReader reader = loginCommand.ExecuteReader();
+					reader.Read();
 					username=reader["Username"].ToString();
-					type = Convert.ToInt32(reader["roll_id"].ToString());
+					type = Convert.ToInt32(reader["role_id"].ToString());
 					reader.Close();
 
 				}
 				Session["username"] = username;
-                if (type == 1)
-                {
-					Response.Redirect("AdminOverview.aspx");
+				if (type == 1)
+				{
+					Response.Redirect("AdminDataOverview.aspx");
 				}
 				else if (type == 2)
-                {
+				{
 					Response.Redirect("Dashboard.aspx");
 				}
 				

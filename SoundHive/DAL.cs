@@ -19,11 +19,12 @@ namespace SoundHive
         public SqlCommand PrepareLoginUser(string email, string password)
         {
 
-            string query = "EXECUTE loginUser @emailORusername=@Email,@password=@pswd,@result= @output OUTPUT";
+            string query = "loginUser";
             SqlCommand command = new SqlCommand(query, conn);
-            command.Parameters.AddWithValue("@Email", email);
-            command.Parameters.AddWithValue("@pswd", password);
-            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@emailORusername", email);
+            command.Parameters.AddWithValue("@password", password);
+            command.Parameters.Add("@result", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
             
             return command;
 
