@@ -1,0 +1,140 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="SoundHive.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> </title>
+
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="CssContent" runat="Server"></asp:ContentPlaceHolder>
+
+</head>
+<body>
+    
+<section class="header">
+
+  <!--
+  <div class="window__actions">
+    <i class="ion-record red"></i>
+    <i class="ion-record yellow"></i>
+    <i class="ion-record green"></i>
+  </div>
+  -->
+  
+  <div class="page-flows">
+  
+    <span class="flow">
+      <i class="ion-chevron-left"></i>
+    </span>
+    
+    <span class="flow">
+      <i class="ion-chevron-right disabled"></i>
+    </span>
+    
+  </div>
+    <div style="display:inline;width:25%">
+    <form action="Search" method="get" style="display:inline">
+      <div class="search" style="display:inline">
+            <input type="text" placeholder="Search" style="display:inline" />
+      </div>
+
+          <input type="submit" value="search" style="display:inline" />
+    </form>
+  </div>
+  <div class="user">
+  
+   
+    <a href="UploadSongs.aspx">
+    <div class="user__inbox">
+        
+      <i class="ion-archive"></i>
+      Upload
+    </div>
+    </a>
+    <div class="user__info">
+    
+      <span class="user__info__img">
+      
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/adam_proPic.jpg" alt="Profile Picture" class="img-responsive" />
+        
+      </span>
+      
+      <span id="username_placeholder" class="user__info__name" runat="server">
+      
+        
+        
+      </span>
+      
+    </div>
+    
+    <div class="user__actions">
+    
+      <div class="dropdown">
+        <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <i class="ion-chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+          <li><a href="/edit-profile">Edit Profile</a></li>
+          <li><a href="/Welcome">Log Out</a></li>
+        </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</section>
+
+
+
+<section class="content">
+
+ 
+  
+      <form class="content__middle" runat="server">
+       
+       <div class="body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+           
+        </div>
+        <asp:ScriptManager runat="server">
+           
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                
+                <%--Site Scripts--%>
+                <asp:ScriptReference  Path="~/Scripts/nouislider.min.js" />
+
+                <asp:ScriptReference  Path="~/Scripts/Site.js" />
+
+
+            </Scripts>
+        </asp:ScriptManager>
+                  </form>
+
+
+  
+   
+    
+
+  
+  
+  
+</section> 
+
+
+            
+
+</body>
+</html>
