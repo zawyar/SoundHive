@@ -13,5 +13,21 @@ namespace SoundHive
         {
 
         }
-    }
+
+		protected void SignIn_Click(object sender, EventArgs e)
+		{
+            try
+            {
+                DAL handler = new DAL();
+                //call procedure??
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while signing in: " + ex.Message);
+            }
+
+
+        }
+	}
 }

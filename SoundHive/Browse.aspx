@@ -39,7 +39,7 @@
 				  
 				<div class="album__tracks">
 				  
-				<div class="tracks">
+				<div id="track" runat="server" class="tracks">
 					  
 					<div class="tracks__heading">
 					  
@@ -60,8 +60,8 @@
 					</div>
 						
 					</div>
-
-					<div class="track">
+					
+					<%--<div class="track">
 
 					<div class="track__number">1</div>
 
@@ -71,7 +71,8 @@
 
 					</div>
 
-					<div class="track__title">Intro</div>
+					<div class="track__title">Intro</div> 
+						<span class="feature">Bebe Rexha</span>
 
 					<div class="track__explicit">
 
@@ -87,9 +88,9 @@
 						  
 					</div>
 
-					</div>
-					  
-					<div class="track">
+					</div>--%>
+					
+				<%--	<div class="track">
 
 					<div class="track__number">2</div>
 
@@ -609,7 +610,7 @@
 						  
 					</div>
 
-					</div>
+					</div>  --%>
 
 				</div>
 					

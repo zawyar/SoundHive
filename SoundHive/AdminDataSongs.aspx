@@ -60,10 +60,10 @@
 					</div>
 						
 					</div>
-
+					<% for (int i=0; i < 500; i++){%>
 					<div class="track">
 
-					<div class="track__number">1</div>
+					<div class="track__number"><%: i+1 %></div>
 
 					<div class="track__added">
 
@@ -88,7 +88,7 @@
 					</div>
 
 					</div>
-					  
+					  <%} %>
 					<div class="track">
 
 					<div class="track__number">2</div>

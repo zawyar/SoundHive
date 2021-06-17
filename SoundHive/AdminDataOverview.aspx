@@ -40,7 +40,7 @@
               <div class="categories">
                     <div class="category">
                       <span>New Users</span>
-                      <span>1.897</span>
+                      <span><%: count %></span>
                     </div>
                     <div class="category">
                       <span>Recurring Users</span>

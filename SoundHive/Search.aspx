@@ -36,7 +36,7 @@
 
                     </div>
 
-                    <div class="track__plays">147,544,165</div>
+                    <div class="track__plays">147,544,165</div>  
 
                   </div>
 
