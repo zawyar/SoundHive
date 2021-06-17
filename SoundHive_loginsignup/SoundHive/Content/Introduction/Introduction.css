@@ -1,0 +1,64 @@
+﻿
+.bg-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://ichef.bbci.co.uk/news/1024/cpsprodpb/2263/production/_109330880_3e59ea5e-b751-4e6e-ab7d-2f516bb85d78.jpg);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    filter: brightness(50%);
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+    background-blend-mode: darken;
+}
+
+
+
+
+#logo {
+    padding-left: 20%;
+    height: 5%;
+    width: 5%;  
+}
+
+#soundhive {
+    padding-left: 2%;
+    color: white;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+
+input[name=login] {
+    clear: both;
+    display: block;
+    margin: 20px auto;
+    width: 120px;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: #7abd00;
+    border-radius: 30px;
+    color: RGBA(231, 252, 255, 1);
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#introTitle {
+    font-family: Montserrat;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 50px;
+}
+
+#intropara {
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 5px 5px 10px #000
+}
+

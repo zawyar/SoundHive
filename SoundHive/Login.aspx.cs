@@ -12,9 +12,11 @@ namespace SoundHive
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			
+			
 
 		}
-		
+
 		protected void SignIn_Click(object sender, EventArgs e)
 		{
 			try
@@ -39,12 +41,16 @@ namespace SoundHive
 				{
 					SqlDataReader reader = loginCommand.ExecuteReader();
 					reader.Read();
+
 					username=reader["Username"].ToString();
 					type = Convert.ToInt32(reader["role_id"].ToString());
+					
 					reader.Close();
 
 				}
 				Session["username"] = username;
+				Session["type"] = type;
+
 				if (type == 1)
 				{
 					Response.Redirect("AdminDataOverview.aspx");
