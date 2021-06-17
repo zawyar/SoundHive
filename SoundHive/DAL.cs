@@ -105,7 +105,7 @@ namespace SoundHive
 
 
 
-                dr.Close();
+                //dr.Close();
 
             }
             catch (Exception ex)
