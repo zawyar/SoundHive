@@ -34,7 +34,7 @@ namespace SoundHive
 
             string query = "execute registerUser @email=@eml,@username=@usrn,@DOB=@date,@password=@pwd,@result= @output OUTPUT";
             SqlCommand command = new SqlCommand(query, conn);
-            command.Parameters.AddWithValue("@usr", username);
+            command.Parameters.AddWithValue("@usrn", username);
             command.Parameters.AddWithValue("@eml", email);
             command.Parameters.AddWithValue("@date", DOB);
             command.Parameters.AddWithValue("@pwd", password);
@@ -86,7 +86,7 @@ namespace SoundHive
         public SqlDataReader AllSongs()
         {
 
-            string query = "Select S.Title, S.Username, S.NumOfPlays from Songs as S";
+            string query = "Select S.Title, S.Username, S.NumberOfPlays from Songs as S";
             SqlCommand command = new SqlCommand(query, conn);
 
 
@@ -162,7 +162,7 @@ namespace SoundHive
 
         ~DAL()
         {
-            conn.Close();
+        
         }
         
     }
