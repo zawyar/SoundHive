@@ -33,9 +33,9 @@
 		
 		  
 	</div>
-   <div class="cards">
-		<a href="GenreDescription.aspx">
-		<div class="card">
+   <div id="card" runat="server" class ="cards">
+		<%--<a href="GenreDescription.aspx">
+		<div  class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
 			</div>
@@ -44,8 +44,8 @@
 				Genre
 			</div>
 		</div>	
-		</a>
-		<a href="GenreDescription.aspx">
+		</a>--%>
+		<%--<a href="GenreDescription.aspx">
 		<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
@@ -98,7 +98,7 @@
 				See All
 			</div>
 		</div>		
-		</a>
+		</a>--%>
 	</div>
 	
 

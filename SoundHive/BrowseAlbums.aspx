@@ -33,9 +33,9 @@
 		
 		  
 	</div>
-	<div class="cards">
-		<a href="AlbumDescription">
-		<div class="card">
+	<div id="card" runat="server" class="cards">
+		<%--<a href="AlbumDescription">--%>
+		<%--<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
 			</div>
@@ -43,9 +43,10 @@
 			<div class="title">
 				Album
 			</div>
+			
 		</div>	
-		</a>
-		<a href="AlbumDescription">
+		</a>--%>
+		<%--<a href="AlbumDescription">
 		<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
@@ -99,7 +100,7 @@
 				See All
 			</div>
 			</div>
-					</a>
+					</a>--%>
 	</div>
 		</div> 
 	

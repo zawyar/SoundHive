@@ -15,7 +15,7 @@
 			<a href="AdminDataSongs" >Manage Songs</a>
 		</li>
 		<li role="presentation">
-			<a href="AdminDataAlbums" >Manage Songs</a>
+			<a href="AdminDataAlbums" >Manage Albums</a>
 		</li>
 			<li role="presentation">
 			<a href="AdminDataArtists" >Manage Users</a>
@@ -32,8 +32,8 @@
 		
 		  
 	</div>
-	<div class="cards">
-		<a href="AlbumDescription">
+	<div id="card" runat="server" class="cards">
+		<%--<a href="AlbumDescription">
 		<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
@@ -99,7 +99,7 @@
 			</div>
 			</div>
 					</a>
-	</div>
+	</div>--%>
 		</div> 
 	
 

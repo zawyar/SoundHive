@@ -13,11 +13,11 @@
 			<li role="presentation">
 			<a href="AdminDataSongs" >Manage Songs</a>
 		</li>
-		<li role="presentation">
-			<a href="AdminDataAlbums" >Manage Songs</a>
-		</li>
 			<li role="presentation">
 			<a href="AdminDataAlbums" >Manage Albums</a>
+		</li>
+			<li role="presentation">
+			<a href="AdminDataArtists" >Manage Users</a>
 		</li>
 			 <li role="presentation">
 			 <a href="AdminDataGenres" >Manage Genres</a>
@@ -39,7 +39,7 @@
 				  
 				<div class="album__tracks">
 				  
-				<div class="tracks">
+				<div id="track" runat="server" class="tracks">
 					  
 					<div class="tracks__heading">
 					  
@@ -60,10 +60,10 @@
 					</div>
 						
 					</div>
-					<% for (int i=0; i < 500; i++){%>
-					<div class="track">
+			
+					<%--<div class="track">
 
-					<div class="track__number"><%: i+1 %></div>
+					<div class="track__number">1</div>
 
 					<div class="track__added">
 
@@ -88,7 +88,7 @@
 					</div>
 
 					</div>
-					  <%} %>
+				
 					<div class="track">
 
 					<div class="track__number">2</div>
@@ -609,7 +609,7 @@
 						  
 					</div>
 
-					</div>
+					</div>--%>
 
 				</div>
 					

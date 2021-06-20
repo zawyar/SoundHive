@@ -33,19 +33,20 @@
 		
 		  
 	</div>
-	 <div class="cards">
+	 <div id="card" runat="server" class="cards">
 		<a href="ArtistDescription.aspx">
 		<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
 			</div>
 			<img src="https://i.pinimg.com/736x/02/b8/94/02b894f7ea6ad9f724648ee511ad018f--edm-music-house-music.jpg" alt="">
-			<div class="title">
+			<div id="t1" class="title">
 				Artist
 			</div>
+			<asp:Button ID="Delete" runat="server" Text="Delete" OnClick="Delete_Click" />
 		</div>	
 		</a>
-		<a href="ArtistDescription.aspx">
+		<%--<a href="ArtistDescription.aspx">
 		<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
@@ -100,7 +101,7 @@
 			</div>
 		</div>	
 				</a>
-	</div>
+	</div>--%>
 		</div> 
 	
 

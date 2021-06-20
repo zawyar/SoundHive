@@ -33,8 +33,19 @@
 		
 		  
 	</div>
-   <div class="cards">
-		<a href="GenreDescription.aspx">
+		<div >
+			<label id="GenreAlreadyExists" runat="server"></label>
+			<asp:Label ID="Label4" runat="server" Cssclass="Labels" Text="Add new Genre: "></asp:Label>
+				 <br />
+		<asp:TextBox ID="Genre" Cssclass="TextB" runat="server"></asp:TextBox>
+      
+		<br />
+
+		<input id="File1" type="file" />
+			<asp:Button ID="Button1" Cssclass="Button" runat="server" Text="Add Genre" OnClick="AddGenre_Click" />
+		</div>
+   <div id="card" runat="server"  class="cards">
+		<%--<a href="GenreDescription.aspx">
 		<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
@@ -99,7 +110,7 @@
 			</div>
 		</div>		
 		</a>
-	</div>
+	</div>--%>
 	</div>
 
 
