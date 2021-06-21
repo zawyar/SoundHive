@@ -86,7 +86,7 @@ namespace SoundHive
         public SqlDataReader AllSongs()
         {
 
-            string query = "Select S.Title, S.Username, S.NumberOfPlays from Songs as S";
+            string query = "Select S.Title, S.Username, S.NumberOfPlays, S.SongId from Songs as S";
             SqlCommand command = new SqlCommand(query, conn);
 
 
@@ -160,7 +160,7 @@ namespace SoundHive
         public SqlDataReader AllAlbums()
         {
 
-            string query = "Select A.Title from Albums as A";
+            string query = "Select A.Title, A.AlbumId, A.Username from Albums as A";
             SqlCommand command = new SqlCommand(query, conn);
 
 
@@ -240,7 +240,8 @@ namespace SoundHive
             command.Parameters.AddWithValue("@usrid", usrn);
             command.Parameters.AddWithValue("@usrn", username);
             command.Parameters.AddWithValue("@eml", email);
-            command.Parameters.AddWithValue("@date", DOB);
+            command.Parameters.AddWithValue("@date", DOB.ToString("yyyy/MM/dd"));
+            System.Diagnostics.Debug.WriteLine(DOB.ToString("yyyy/MM/dd"));
             command.Parameters.AddWithValue("@pwd", password);
             command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
 
@@ -346,6 +347,66 @@ namespace SoundHive
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine("Error while adding genre: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+
+        }
+
+        public bool DeleteSong(int id)
+        {
+            string query = "execute DeleteSong @songId =@id, @result= @output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", id);
+
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) == -1)
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while deleting song: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+
+        }
+
+        public bool DeleteAlbum(int AlbumId)
+        {
+            string query = "execute DeleteAlbum @AlbumId =@id, @result= @output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", AlbumId);
+
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) == -1)
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while deleting song: " + ex.Message);
 
                 return false;
 
