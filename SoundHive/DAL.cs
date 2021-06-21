@@ -123,7 +123,7 @@ namespace SoundHive
         public SqlDataReader AllGenres()
         {
 
-            string query = "Select G.GenreName from Genres as G";
+            string query = "Select G.GenreName, G.GenreId from Genres as G";
             SqlCommand command = new SqlCommand(query, conn);
   
 
@@ -295,11 +295,11 @@ namespace SoundHive
             return true;
 
         }
-        public bool DeleteGenre(string genre)
+        public bool DeleteGenre(int genreid)
         {
-            string query = "execute DeleteGenre @GenreName =@gname, @result= @output OUTPUT";
+            string query = "execute DeleteGenre @GenreId =@gid, @result= @output OUTPUT";
             SqlCommand command = new SqlCommand(query, conn);
-            command.Parameters.AddWithValue("@gname", genre);
+            command.Parameters.AddWithValue("@gid", genreid);
 
             command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
 

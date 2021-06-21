@@ -14,8 +14,8 @@ namespace SoundHive
         {
             DAL handler = new DAL();
             Button b1 = (Button)sender;
-            string gname = b1.CommandArgument;
-            if (handler.DeleteGenre(gname))
+            int gid = Convert.ToInt32(b1.CommandArgument);
+            if (handler.DeleteGenre(gid))
             {
 
                 Response.Redirect("AdminDataGenres.aspx");
@@ -46,15 +46,15 @@ namespace SoundHive
             }
         }
 
-        protected void DisplayAGenre(string name)
+        protected void DisplayAGenre(string name, int id)
         {
-            card.Controls.Add(new LiteralControl("<a href='GenreDescription.aspx'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'https://i.pinimg.com/736x/02/b8/94/02b894f7ea6ad9f724648ee511ad018f--edm-music-house-music.jpg' alt=''><div class='title'>" + name + "</div></div>"));
+            card.Controls.Add(new LiteralControl("<a href='GenreDescription.aspx'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'https://i.pinimg.com/736x/02/b8/94/02b894f7ea6ad9f724648ee511ad018f--edm-music-house-music.jpg' alt=''><div id='" +id + "' class='title'>" + name + "</div></div>"));
             Button b1 = new Button();
-            b1.Text = "Delete User";
+            b1.Text = "Delete Genre";
             b1.Width = 30;
 
             b1.CssClass = "Button";
-            b1.CommandArgument = name.ToString();
+            b1.CommandArgument = id.ToString();
             b1.Click += new EventHandler(Delete_Click);
             card.Controls.Add(b1);
 
@@ -65,15 +65,17 @@ namespace SoundHive
             DAL handler = new DAL();
             SqlDataReader obj = handler.AllGenres();
             string name;
+            int id;
             //image??
             if (obj.HasRows)
             {
                 while (obj.Read())
                 {
                     name = obj.GetString(0);
+                    id = obj.GetInt32(1);
 
 
-                    DisplayAGenre(name);
+                    DisplayAGenre(name,id);
 
                 }
             }
