@@ -34,7 +34,7 @@
 		  
 	</div>
 	 <div id="card" runat="server" class="cards">
-		<a href="ArtistDescription.aspx">
+		<%--<a href="ArtistDescription.aspx">
 		<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
@@ -43,9 +43,8 @@
 			<div id="t1" class="title">
 				Artist
 			</div>
-			<asp:Button ID="Delete" runat="server" Text="Delete" OnClick="Delete_Click" />
 		</div>	
-		</a>
+		</a>--%>
 		<%--<a href="ArtistDescription.aspx">
 		<div class="card">
 			<div class="overlayer">
