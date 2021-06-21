@@ -39,7 +39,7 @@
 			 <br />
 			<asp:TextBox ID="Genre" Cssclass="TextB" runat="server"></asp:TextBox>
 		
-			<br />
+			<br />-
 
 			<input id="File1" type="file" />
 			<asp:Button ID="Button1" Cssclass="Button" runat="server" Text="Add Genre" OnClick="AddGenre_Click" />

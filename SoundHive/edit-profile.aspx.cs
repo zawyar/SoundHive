@@ -65,7 +65,7 @@ namespace SoundHive
             }
             else
             {
-                //UserAlreadyExists.InnerText = "Username or Email already exists fdfhgdsyf";
+                UserAlreadyExists.InnerText = "Username or Email already exists fdfhgdsyf";
             }
 
         }
