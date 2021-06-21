@@ -33,15 +33,15 @@
 		
 		  
 	</div>
-		<div >
+		<div id="addGenre">
 			<label id="GenreAlreadyExists" runat="server"></label>
 			<asp:Label ID="Label4" runat="server" Cssclass="Labels" Text="Add new Genre: "></asp:Label>
-				 <br />
-		<asp:TextBox ID="Genre" Cssclass="TextB" runat="server"></asp:TextBox>
-      
-		<br />
+			 <br />
+			<asp:TextBox ID="Genre" Cssclass="TextB" runat="server"></asp:TextBox>
+		
+			<br />
 
-		<input id="File1" type="file" />
+			<input id="File1" type="file" />
 			<asp:Button ID="Button1" Cssclass="Button" runat="server" Text="Add Genre" OnClick="AddGenre_Click" />
 		</div>
    <div id="card" runat="server"  class="cards">
