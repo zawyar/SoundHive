@@ -233,6 +233,104 @@ namespace SoundHive
 
         }
 
+        public SqlDataReader GetSongsByGenreId(int GenreId)
+        {
+
+            string query = "execute getSongDetailsByGenreId @GenreId=@id";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", GenreId);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = command.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching songs by genre id: " + ex.Message);
+
+
+
+
+            }
+            return reader;
+
+
+        }
+        public SqlDataReader GetAlbumsByGenreId(int GenreId)
+        {
+
+            string query = "execute getAlbumDetailsByGenreId @GenreId=@id";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", GenreId);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = command.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching songs by genre id: " + ex.Message);
+
+
+
+
+            }
+            return reader;
+
+
+        }
+        public SqlDataReader GetAlbumsByUser(string usern)
+        {
+
+            string query = "execute getAlbumDetailsByUsername @Usern=@name";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@name", usern);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = command.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching albums by username: " + ex.Message);
+
+
+
+
+            }
+            return reader;
+
+
+        }
+      
+        public SqlDataReader GetNameByGenreId(int GenreId)
+        {
+
+            string query = "execute getGenreByGenreId @GenreId=@id";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", GenreId);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = command.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching name by genre id: " + ex.Message);
+
+
+
+
+            }
+            return reader;
+
+
+        }
+
         public SqlDataReader AllArtists()
         {
 

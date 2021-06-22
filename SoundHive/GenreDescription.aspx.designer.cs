@@ -15,13 +15,13 @@ namespace SoundHive
     {
 
         /// <summary>
-        /// card control.
+        /// GenreName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl card;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl GenreName;
 
         /// <summary>
         /// card control.
@@ -31,5 +31,14 @@ namespace SoundHive
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl card;
+
+        /// <summary>
+        /// track control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl track;
     }
 }

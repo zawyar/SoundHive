@@ -326,15 +326,6 @@ begin
 end
 
 
-select * from users
-
-GO
-ALTER LOGIN [sa] WITH DEFAULT_DATABASE=[master]
-GO
-USE [master]
-GO
-ALTER LOGIN [sa] WITH PASSWORD=N'alphabeta' MUST_CHANGE
-GO
 
 drop procedure getGenreImgById
 CREATE PROCEDURE getGenreImgById
@@ -451,20 +442,64 @@ end
 
 drop procedure DeleteAlbum
 
-select * from Songs
+
+-- view for albums
 create view AlbumsView
 as
-select albums.AlbumId,SongId,Song,Songs.title as songTitle,NumberOfPlays,Albums.DateReleased from albums join Songs on Songs.AlbumId= Albums.AlbumId
+select albums.AlbumId, albums.Title,Songs.SongId,Song,Songs.title as songTitle,NumberOfPlays,Albums.DateReleased, Albums.Username from albums join Songs on Songs.AlbumId= Albums.AlbumId
 
+drop view AlbumsView
+--procedure to get album details
 CREATE PROCEDURE getAlbumDetailsById
 @alsBumId int
 AS
 BEGIN
 	SELECT * FROM Albums WHERE AlbumId = @alsBumId
 END
+ 
+-- procedure to get album song details
 CREATE PROCEDURE getAlbumSongDetailsById
 @alsBumId int
 AS
 BEGIN
 	SELECT S.SongId, S.Title,S.Song, S.Username, S.NumberOfPlays FROM Albums join Songs as S on S.AlbumId=Albums.AlbumId WHERE Albums.AlbumId = @alsBumId
 END
+
+select * from Users
+--get album details by genre id
+CREATE PROCEDURE getAlbumDetailsByGenreId
+@GenreId int
+AS
+BEGIN
+	SELECT * FROM Albums WHERE GenreId = @GenreId
+END
+
+--get song details by genre id
+CREATE PROCEDURE getSongDetailsByGenreId
+@GenreId int
+AS
+BEGIN
+	SELECT S.SongId, S.Title,S.Song, S.Username, S.NumberOfPlays FROM Albums join Songs as S on S.AlbumId=Albums.AlbumId WHERE Albums.GenreId = @GenreId
+END
+
+CREATE PROCEDURE getGenreByGenreId
+@GenreId int
+AS
+BEGIN
+	SELECT G.GenreName FROM Genres as G WHERE G.GenreId = @GenreId
+END
+
+
+--album details by user for artist description
+CREATE PROCEDURE getAlbumDetailsByUser
+@Usern varchar(50)
+AS
+BEGIN
+	SELECT * FROM AlbumsView WHERE Username = @Usern
+END
+
+drop procedure getAlbumDetailsByUser
+Select * from Albums
+Select * from Genres
+update Albums
+set GenreId=2 where Title='Made in the A.M'

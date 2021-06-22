@@ -12,7 +12,7 @@ namespace SoundHive
 
         protected void DisplayAnArtist(string name)
         {
-            card.Controls.Add(new LiteralControl("<a href='ArtistDescription.aspx'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'ArtistImageHandler.ashx?username=" + name + "' alt=''><div class='title'>" + name + "</div></div>"));
+            card.Controls.Add(new LiteralControl("<a href='ArtistDescription.aspx?username=" +name + "'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'ArtistImageHandler.ashx?username=" + name + "' alt=''><div class='title'>" + name + "</div></div>"));
 
 
         }

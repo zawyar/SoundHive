@@ -7,22 +7,22 @@
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 	<div style="height:849px;overflow-y:scroll"> 
-	<div class="wrapper">
-	<h1>Soul</h1>
-	<div id="card" class="cards">
+	<div  class="wrapper">
+	<h1><div id="GenreName" runat="server" class="GenreName" > </div></h1>
+	<div id="card" runat="server" class="cards">
 		
-		<div class="card">
+		<%--<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
 			</div>
-			<img src="https://i.pinimg.com/736x/02/b8/94/02b894f7ea6ad9f724648ee511ad018f--edm-music-house-music.jpg" alt="">
+			<img id="albumimage" src="" alt="" runat="server">
 			<div class="title">
 				<a href="#">Hover over</a>
-			</div>
+			</div>--%>
 		</div>	
 		
 		
-		<div class="card">
+		<%--<div class="card">
 			<div class="overlayer">
 				<i class="far fa-play-circle"></i>
 			</div>
@@ -50,10 +50,10 @@
 			<div class="title">
 				<a href="#">Hover over</a>
 			</div>
-		</div>		
+		</div>		--%>
 	</div>
 	
-	<div class="wrapper_section_2">
+	<%--<div class="wrapper_section_2">
 	<div class="cards">
 		
 		<div class="card">
@@ -97,12 +97,12 @@
 		</div>	
 		
 	</div>
-</div>
+</div>--%>
 	
 	
 	<div class="album__tracks">
 				  
-				<div class="tracks">
+				<div id="track" runat="server" class="tracks">
 					  
 					<div class="tracks__heading">
 					  
@@ -124,7 +124,7 @@
 						
 					</div>
 
-					<div class="track">
+<%--					<div class="track">
 
 					<div class="track__number">1</div>
 
@@ -672,7 +672,7 @@
 						  
 					</div>
 
-					</div>
+					</div>--%>
 
 				</div>
 					
