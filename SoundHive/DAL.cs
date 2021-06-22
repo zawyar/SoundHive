@@ -86,7 +86,7 @@ namespace SoundHive
         public SqlDataReader AllSongs()
         {
 
-            string query = "Select S.Title, S.Username, S.NumberOfPlays, S.SongId from Songs as S";
+            string query = "Select S.SongId, S.Title,S.Song, S.Username, S.NumberOfPlays from Songs as S";
             SqlCommand command = new SqlCommand(query, conn);
 
 
@@ -94,18 +94,9 @@ namespace SoundHive
             try
             {
                 SqlDataReader dr = command.ExecuteReader();
-                if (dr.HasRows)
-                {
+               
                     return dr;
-                }
-                else
-                {
-                    return null;
-                }
-
-
-
-                //dr.Close();
+                
 
             }
             catch (Exception ex)
@@ -415,10 +406,11 @@ namespace SoundHive
             return true;
 
         }
+        
 
         ~DAL()
         {
-
+            
         }
         
     }
