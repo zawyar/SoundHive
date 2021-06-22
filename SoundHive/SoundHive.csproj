@@ -329,6 +329,7 @@
     <Compile Include="BrowseGenres.aspx.designer.cs">
       <DependentUpon>BrowseGenres.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Configuration\ImageAPIConfig.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -371,6 +372,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ImagesController.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

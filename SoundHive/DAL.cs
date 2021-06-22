@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
-
+using System.IO;
 namespace SoundHive
 {
     public class DAL
@@ -111,19 +111,122 @@ namespace SoundHive
 
         }
 
-        public bool SearchSong(string title, ref int numplays, ref string artist)
+        public SqlDataReader AllGenres()
         {
-            //should be arrays because more than 1 search result
 
-            //only trying to doing by song title rn, not search results of songs for an artist
-
-            string query = "execute SearchSong @title=@name,@NumOfPlays= @plays OUTPUT, @artist= @user OUTPUT,@result= @output OUTPUT ";
+            string query = "Select G.GenreName, G.GenreId from Genres as G";
             SqlCommand command = new SqlCommand(query, conn);
-            command.Parameters.AddWithValue("@name", title);
- 
+  
+
+
+            try
+            {
+                SqlDataReader dr = command.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    return dr;
+                }
+                else
+                {
+                    return null;
+                }
+
+
+
+                //dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while displaying Genres: " + ex.Message);
+
+                return null;
+
+
+            }
+
+
+        }
+
+        public SqlDataReader AllAlbums()
+        {
+
+            string query = "Select A.Title, A.AlbumId, A.Username from Albums as A";
+            SqlCommand command = new SqlCommand(query, conn);
+
+
+
+            try
+            {
+                SqlDataReader dr = command.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    return dr;
+                }
+                else
+                {
+                    return null;
+                }
+
+
+
+                //dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while displaying Albums: " + ex.Message);
+
+                return null;
+
+
+            }
+
+
+        }
+
+        public SqlDataReader AllArtists()
+        {
+
+            string query = "Select U.Username from Users as U";
+            SqlCommand command = new SqlCommand(query, conn);
+
+
+
+            try
+            {
+                SqlDataReader dr = command.ExecuteReader();
+               
+                    return dr;
+                
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while displaying Artists: " + ex.Message);
+
+                return null;
+
+
+            }
+
+
+        }
+
+
+        public bool EditProfile(string usrn, string username, string email, DateTime DOB, string password)
+        {
+            string query = "execute EditProfile @usern =@usrid,@email = @eml,@username = @usrn,@DOB = @date, @password = @pwd,@result= @output OUTPUT";
+            //string query = "execute EditProfile @email=@eml,@username=@usrn,@DOB=@date,@password=@pwd,@result= @output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@usrid", usrn);
+            command.Parameters.AddWithValue("@usrn", username);
+            command.Parameters.AddWithValue("@eml", email);
+            command.Parameters.AddWithValue("@date", DOB.ToString("yyyy/MM/dd"));
+            System.Diagnostics.Debug.WriteLine(DOB.ToString("yyyy/MM/dd"));
+            command.Parameters.AddWithValue("@pwd", password);
             command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
-            command.Parameters.Add("@plays", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
-            command.Parameters.Add("@user", System.Data.SqlDbType.VarChar).Direction = System.Data.ParameterDirection.Output;
+
 
             try
             {
@@ -132,16 +235,160 @@ namespace SoundHive
                 {
                     return false;
                 }
-                else
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while editing user: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+
+        }
+
+        public bool DeleteAccount(string usrn)
+        {
+            string query = "execute DeleteUser @usern =@usrid, @result= @output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@usrid", usrn);
+            
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) == -1)
                 {
-                    numplays = Convert.ToInt32(command.Parameters["@plays"].Value);
-                    artist = Convert.ToString(command.Parameters["@user"].Value);
+                    return false;
                 }
 
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine("Error while searching song: " + ex.Message);
+                System.Diagnostics.Debug.WriteLine("Error while deleting user: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+
+        }
+        public bool DeleteGenre(int genreid)
+        {
+            string query = "execute DeleteGenre @GenreId =@gid, @result= @output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@gid", genreid);
+
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) == -1)
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while deleting genre: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+
+        }
+
+        public bool AddGenre(string genre)
+        {
+            string query = "execute AddGenre @GenreName =@gname, @result= @output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@gname", genre);
+
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) == -1)
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while adding genre: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+
+        }
+
+        public bool DeleteSong(int id)
+        {
+            string query = "execute DeleteSong @songId =@id, @result= @output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", id);
+
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) == -1)
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while deleting song: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+
+        }
+
+        public bool DeleteAlbum(int AlbumId)
+        {
+            string query = "execute DeleteAlbum @AlbumId =@id, @result= @output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", AlbumId);
+
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) == -1)
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while deleting song: " + ex.Message);
 
                 return false;
 

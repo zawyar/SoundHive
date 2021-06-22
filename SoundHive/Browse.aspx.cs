@@ -9,7 +9,7 @@ namespace SoundHive
 {
     public partial class Browse : System.Web.UI.Page
     {
-
+ 
         protected void DisplayASong(int tracknum, string title, string username , int num)
         {
 
@@ -17,7 +17,19 @@ namespace SoundHive
             track.Controls.Add(new LiteralControl("<div class='track'><div class=\"track__number\">" + tracknum + "</div> <div class=\"track__added\">" +
                 "<i class=\"ion-checkmark-round added\"></i></div> <div class=\"track__title featured\"><span class=\"title\">" + title + "</span>" +
                 "<span class=\"feature\">" + username + "</span></div><div class=\"track__explicit\"><span class=\"label\">Explicit</span></div><div class=\"track__length\">" + num + "</div><div class=\"track__popularity\"><i class=\"ion-arrow-graph-up-right\"></i></div></div>"));
-    
+
+            
+        }
+        private void WriteFile(Byte[] bytes, string fileName)
+        {
+            Response.Buffer = true;
+            Response.Charset = "";
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.ContentType = "audio/mpeg";
+            Response.AddHeader("content-disposition", "attachment;filename=" + fileName);
+            Response.BinaryWrite(bytes);
+            Response.Flush();
+            Response.End();
         }
         private void WriteFile(Byte[] bytes, string fileName)
         {

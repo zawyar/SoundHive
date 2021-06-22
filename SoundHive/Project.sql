@@ -160,6 +160,99 @@ CREATE PROCEDURE getSongById
 @SongId int
 AS
 BEGIN
-	SELECT Song FROM Songs WHERE SongId=@SongId
+	SELECT @alsBumImage = AlbumImage FROM Albums WHERE AlbumId = @alsBumId
 END
-SELECT DATALENGTH(Song) FROM Songs WHERE SongId=1
+
+--DELETE USER STORED PROCEDURE TO DELETE USERS
+create procedure DeleteUser
+@usern varchar(50),
+@result int output
+as 
+begin
+if(EXISTS (select * from Users where (Username=@usern)))
+	begin
+	set @result=1
+	Delete from Users where Username=@usern
+	end
+else
+	begin
+	set @result =-1
+	end
+end
+
+
+--DELETE GENRE STORED PROCEDURE FOR DELETING GENRES
+create procedure DeleteGenre
+@genrename varchar(50),
+@result int output
+as 
+begin
+if(EXISTS (select * from Genres where (GenreName=@genrename)))
+	begin
+	set @result=1
+	Delete from Genres where GenreName=@genrename
+	end
+else
+	begin
+	set @result =-1
+	end
+end
+--Add GENRE STORED PROCEDURE FOR ADDING GENRES
+create procedure AddGenre
+@genrename varchar(50),
+@result int output
+as 
+begin
+if(EXISTS (select * from Genres where (GenreName=@genrename)))
+	begin
+	set @result=-1
+	
+	end
+else
+	begin
+	set @result =1
+	insert into Genres(GenreName) values(@genrename)
+	end
+end
+
+--DELETE SONG TO DELETE SONGS
+create procedure DeleteSong
+@songId int ,
+@result int output
+as 
+begin
+if(EXISTS (select * from Songs where (SongId = @songId)))
+	begin
+	set @result=1
+	Delete from Songs where SongId = @songId
+	end
+else
+	begin
+	set @result =-1
+	end
+end
+
+drop procedure DeleteSong
+
+--DELETE ALBUM TO DELETE ALBUM
+create procedure DeleteAlbum
+@albumID int,
+@result int output
+as 
+begin
+if(EXISTS (select * from Albums where ( AlbumId = @albumID)))
+	begin
+	set @result=1
+	Delete from Albums where AlbumId = @albumID
+	end
+else
+	begin
+		set @result =-1
+	end
+end
+
+
+
+drop procedure DeleteAlbum
+
+select * from Songs
