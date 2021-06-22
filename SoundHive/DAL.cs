@@ -150,7 +150,82 @@ namespace SoundHive
             return true;
 
         }
-        
+        public byte[] getAlbumImageFromId(int id)
+        {
+            byte[] image=null;
+            string query = "execute getAlbumImgById @alsBumId=@id";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                image =(byte[]) reader.GetValue(0);
+               
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching image: " + ex.Message);
+
+                
+
+
+            }
+            return image;
+
+        }
+        public byte[] getGenreImageFromId(int id)
+        {
+            byte[] image = null;
+            string query = "execute getGenreImgById @genreID=@id";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                image = (byte[])reader.GetValue(0);
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching image: " + ex.Message);
+
+
+
+
+            }
+            return image;
+
+        }
+        public byte[] getSongFromId(int id)
+        {
+            byte[] song = null;
+            string query = "execute getSongById @SongId=@id";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                song = (byte[])reader.GetValue(0);
+
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching song: " + ex.Message);
+
+
+
+
+            }
+            return song;
+
+        }
 
         ~DAL()
         {

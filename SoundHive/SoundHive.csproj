@@ -201,6 +201,7 @@
     <Content Include="Introduction.aspx" />
     <Content Include="Welcome.aspx" />
     <Content Include="Admin.Master" />
+    <Content Include="AlbumImageHandler.ashx" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -208,6 +209,7 @@
     <Content Include="fonts\ionicons.eot" />
     <Content Include="fonts\ionicons.ttf" />
     <Content Include="fonts\ionicons.woff" />
+    <Content Include="GenreImageHandler.ashx" />
     <None Include="Properties\PublishProfiles\soundhive - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -294,6 +296,9 @@
     <Compile Include="AlbumDescription.aspx.designer.cs">
       <DependentUpon>AlbumDescription.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AlbumImageHandler.ashx.cs">
+      <DependentUpon>AlbumImageHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Browse.aspx.cs">
@@ -324,7 +329,6 @@
     <Compile Include="BrowseGenres.aspx.designer.cs">
       <DependentUpon>BrowseGenres.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Configuration\ImageAPIConfig.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,10 +365,12 @@
     <Compile Include="GenreDescription.aspx.designer.cs">
       <DependentUpon>GenreDescription.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GenreImageHandler.ashx.cs">
+      <DependentUpon>GenreImageHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ImagesController.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -415,6 +421,9 @@
     <Compile Include="Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
+    <Compile Include="SongHandler.ashx.cs">
+      <DependentUpon>SongHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="UploadSongs.aspx.cs">
       <DependentUpon>UploadSongs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -453,6 +462,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Configuration\" />
     <Folder Include="Content\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
@@ -461,6 +471,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Default.Master" />
     <Content Include="Guest.Master" />
+    <Content Include="SongHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

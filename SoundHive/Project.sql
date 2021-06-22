@@ -140,20 +140,26 @@ GO
 ALTER LOGIN [sa] WITH PASSWORD=N'alphabeta' MUST_CHANGE
 GO
 
+drop procedure getGenreImgById
 CREATE PROCEDURE getGenreImgById
-@genreID int,
-@image varbinary(MAX) OUTPUT
+@genreID int
 AS
 BEGIN
-	SELECT @image = GenreImage FROM Genres WHERE GenreId = @genreID
+	SELECT GenreImage FROM Genres WHERE GenreId = @genreID
 END
 
 
-
+drop procedure getAlbumImgById
 CREATE PROCEDURE getAlbumImgById
-@alsBumId int,
-@alsBumImage varbinary(MAX) OUTPUT
+@alsBumId int
 AS
 BEGIN
-	SELECT @alsBumImage = AlbumImage FROM Albums WHERE AlbumId = @alsBumId
+	SELECT AlbumImage FROM Albums WHERE AlbumId = @alsBumId
 END
+CREATE PROCEDURE getSongById
+@SongId int
+AS
+BEGIN
+	SELECT Song FROM Songs WHERE SongId=@SongId
+END
+SELECT DATALENGTH(Song) FROM Songs WHERE SongId=1

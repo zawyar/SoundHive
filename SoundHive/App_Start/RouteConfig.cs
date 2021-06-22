@@ -13,6 +13,9 @@ namespace SoundHive
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
+            routes.MapPageRoute("",
+                    "Images/{action}/{id}",
+                    "~/AlbumImages.aspx");
             
         }
     }
