@@ -30,7 +30,7 @@ namespace SoundHive
         }
         protected void DisplayAnArtist(string name)
         {
-            card.Controls.Add(new LiteralControl("<a href='ArtistDescription.aspx'><div class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'https://i.pinimg.com/736x/02/b8/94/02b894f7ea6ad9f724648ee511ad018f--edm-music-house-music.jpg' alt=''><div id = 't1' class='title'>" +name + "</div></div>	</a>"));
+            card.Controls.Add(new LiteralControl("<a href='ArtistDescription.aspx'><div class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'ArtistImageHandler.ashx?username=" + name + "' alt=''><div id = 't1' class='title'>" + name + "</div></div>	</a>"));
             Button b1 = new Button();
             b1.Text = "Delete User";
             b1.Width = 30;

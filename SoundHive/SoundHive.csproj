@@ -202,6 +202,7 @@
     <Content Include="Welcome.aspx" />
     <Content Include="Admin.Master" />
     <Content Include="AlbumImageHandler.ashx" />
+    <Content Include="ArtistImageHandler.ashx" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -301,6 +302,9 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ArtistImageHandler.ashx.cs">
+      <DependentUpon>ArtistImageHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Browse.aspx.cs">
       <DependentUpon>Browse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -464,7 +468,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Configuration\" />
     <Folder Include="Content\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>

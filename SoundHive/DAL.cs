@@ -470,6 +470,32 @@ namespace SoundHive
             return image;
 
         }
+
+        public byte[] getArtistImageFromUsername(string username)
+        {
+            byte[] image = null;
+            string query = "execute getArtistImgByUsername @usern=@name";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@name", username);
+
+            try
+            {
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Read();
+                image = (byte[])reader.GetValue(0);
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching image: " + ex.Message);
+
+
+
+
+            }
+            return image;
+
+        }
         public byte[] getGenreImageFromId(int id)
         {
             byte[] image = null;

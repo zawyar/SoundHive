@@ -10,9 +10,9 @@ namespace SoundHive
     public partial class BrowseGenres : System.Web.UI.Page
     {
 
-        protected void DisplayAGenre(string name)
+        protected void DisplayAGenre(string name, int id)
         {
-            card.Controls.Add(new LiteralControl("<a href='GenreDescription.aspx'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'https://i.pinimg.com/736x/02/b8/94/02b894f7ea6ad9f724648ee511ad018f--edm-music-house-music.jpg' alt=''><div class='title'>" + name + "</div></div>"));
+            card.Controls.Add(new LiteralControl("<a href='GenreDescription.aspx?id=" + id + "'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'GenreImageHandler.ashx?id=" +id + "' alt=''><div class='title'>" + name + "</div></div>"));
 
 
         }
@@ -22,15 +22,15 @@ namespace SoundHive
             DAL handler = new DAL();
             SqlDataReader obj = handler.AllGenres();
             string name;
-            //image??
+            int id;
             if (obj.HasRows)
             {
                 while (obj.Read())
                 {
                     name = obj.GetString(0);
-                    
+                    id = obj.GetInt32(1);
 
-                    DisplayAGenre(name);
+                    DisplayAGenre(name,id);
                    
                 }
             }

@@ -48,7 +48,7 @@ namespace SoundHive
 
         protected void DisplayAGenre(string name, int id)
         {
-            card.Controls.Add(new LiteralControl("<a href='GenreDescription.aspx'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'https://i.pinimg.com/736x/02/b8/94/02b894f7ea6ad9f724648ee511ad018f--edm-music-house-music.jpg' alt=''><div id='" +id + "' class='title'>" + name + "</div></div>"));
+            card.Controls.Add(new LiteralControl("<a href='GenreDescription.aspx'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'GenreImageHandler.ashx?id=" + id + "' alt=''><div id='" + id + "' class='title'>" + name + "</div></div>"));
             Button b1 = new Button();
             b1.Text = "Delete Genre";
             b1.Width = 30;
