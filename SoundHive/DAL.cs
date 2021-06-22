@@ -184,6 +184,54 @@ namespace SoundHive
 
 
         }
+        public SqlDataReader GetAlbumById(int albumId)
+        {
+
+            string query = "execute getAlbumDetailsById @alsBumId=@id";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", albumId);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = command.ExecuteReader();
+                
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching image: " + ex.Message);
+
+
+
+
+            }
+            return reader;
+
+
+        }
+        public SqlDataReader GetAlbumSongsById(int albumId)
+        {
+
+            string query = "execute getAlbumSongDetailsById @alsBumId=@id";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", albumId);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = command.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching image: " + ex.Message);
+
+
+
+
+            }
+            return reader;
+
+
+        }
 
         public SqlDataReader AllArtists()
         {
@@ -447,6 +495,7 @@ namespace SoundHive
             return image;
 
         }
+        
         public byte[] getSongFromId(int id)
         {
             byte[] song = null;
@@ -473,6 +522,8 @@ namespace SoundHive
             return song;
 
         }
+
+
 
         ~DAL()
         {

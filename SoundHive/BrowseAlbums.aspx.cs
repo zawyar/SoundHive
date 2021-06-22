@@ -11,9 +11,9 @@ namespace SoundHive
     public partial class BrowseAlbums : System.Web.UI.Page
     {
 
-        protected void DisplayAnAlbum(string name)
+        protected void DisplayAnAlbum(string name,int id)
         {
-            card.Controls.Add(new LiteralControl("<a href='AlbumDescription.aspx'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'https://i.pinimg.com/736x/02/b8/94/02b894f7ea6ad9f724648ee511ad018f--edm-music-house-music.jpg' alt=''><div class='title'>" + name + "</div></div>"));
+            card.Controls.Add(new LiteralControl("<a href='AlbumDescription.aspx?id="+id+"'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'AlbumImageHandler.ashx?id="+id+"' alt=''><div class='title'>" + name + "</div></div>"));
 
 
         }
@@ -23,15 +23,16 @@ namespace SoundHive
             DAL handler = new DAL();
             SqlDataReader obj = handler.AllAlbums();
             string name;
-           
+            int id;
             
             if (obj.HasRows)
             {
                 while (obj.Read())
                 {
                     name = obj.GetString(0);
-                   
-                    DisplayAnAlbum(name);
+
+                    id = obj.GetInt32(1);
+                    DisplayAnAlbum(name,id);
 
                 }
             }

@@ -281,3 +281,190 @@ set Username='najia', Email='najia@gmail.com' where DOB='5-5-2020'
 
 update Users
 set Username='saad', Email='saad@gmail.com' where DOB='3-31-2020'
+
+
+
+create procedure loginUser
+@emailORusername varchar(50),
+@password varchar(50),
+@result int output
+as 
+begin
+
+	if(EXISTS (select * from Users where (Email=@emailORusername or Username=@emailORusername)))
+	begin
+		set @result=1
+		if(EXISTS (select * from Users where (Email=@emailORusername or Username=@emailORusername) and Password_=@password))
+		begin
+			set @result=2
+			select * from Users where (Email=@emailORusername or Username=@emailORusername) and Password_=@password
+		end
+		
+	end
+	else
+	begin
+		set @result=0
+	end
+end
+
+
+create procedure registerUser
+@email varchar(50),
+@username varchar(50),
+@DOB date,
+@password varchar(50),
+@result int output
+as 
+begin
+	if(EXISTS (select * from Users where (Email=@email or Username=@username)))
+	begin
+		set @result=-1
+		
+	end
+		insert into Users values(@username,@email,@DOB,@password,NULL,2)
+	set @result=@@ROWCOUNT 
+end
+
+
+select * from users
+
+GO
+ALTER LOGIN [sa] WITH DEFAULT_DATABASE=[master]
+GO
+USE [master]
+GO
+ALTER LOGIN [sa] WITH PASSWORD=N'alphabeta' MUST_CHANGE
+GO
+
+drop procedure getGenreImgById
+CREATE PROCEDURE getGenreImgById
+@genreID int
+AS
+BEGIN
+	SELECT GenreImage FROM Genres WHERE GenreId = @genreID
+END
+
+
+drop procedure getAlbumImgById
+CREATE PROCEDURE getAlbumImgById
+@alsBumId int
+AS
+BEGIN
+	SELECT AlbumImage FROM Albums WHERE AlbumId = @alsBumId
+END
+CREATE PROCEDURE getSongById
+@SongId int
+AS
+BEGIN
+	SELECT song FROM Songs WHERE SongId = @SongId
+END
+
+--DELETE USER STORED PROCEDURE TO DELETE USERS
+create procedure DeleteUser
+@usern varchar(50),
+@result int output
+as 
+begin
+if(EXISTS (select * from Users where (Username=@usern)))
+	begin
+	set @result=1
+	Delete from Users where Username=@usern
+	end
+else
+	begin
+	set @result =-1
+	end
+end
+
+
+--DELETE GENRE STORED PROCEDURE FOR DELETING GENRES
+create procedure DeleteGenre
+@genrename varchar(50),
+@result int output
+as 
+begin
+if(EXISTS (select * from Genres where (GenreName=@genrename)))
+	begin
+	set @result=1
+	Delete from Genres where GenreName=@genrename
+	end
+else
+	begin
+	set @result =-1
+	end
+end
+--Add GENRE STORED PROCEDURE FOR ADDING GENRES
+create procedure AddGenre
+@genrename varchar(50),
+@result int output
+as 
+begin
+if(EXISTS (select * from Genres where (GenreName=@genrename)))
+	begin
+	set @result=-1
+	
+	end
+else
+	begin
+	set @result =1
+	insert into Genres(GenreName) values(@genrename)
+	end
+end
+
+--DELETE SONG TO DELETE SONGS
+create procedure DeleteSong
+@songId int ,
+@result int output
+as 
+begin
+if(EXISTS (select * from Songs where (SongId = @songId)))
+	begin
+	set @result=1
+	Delete from Songs where SongId = @songId
+	end
+else
+	begin
+	set @result =-1
+	end
+end
+
+drop procedure DeleteSong
+
+--DELETE ALBUM TO DELETE ALBUM
+create procedure DeleteAlbum
+@albumID int,
+@result int output
+as 
+begin
+if(EXISTS (select * from Albums where ( AlbumId = @albumID)))
+	begin
+	set @result=1
+	Delete from Albums where AlbumId = @albumID
+	end
+else
+	begin
+		set @result =-1
+	end
+end
+
+
+
+drop procedure DeleteAlbum
+
+select * from Songs
+create view AlbumsView
+as
+select albums.AlbumId,SongId,Song,Songs.title as songTitle,NumberOfPlays,Albums.DateReleased from albums join Songs on Songs.AlbumId= Albums.AlbumId
+
+CREATE PROCEDURE getAlbumDetailsById
+@alsBumId int
+AS
+BEGIN
+	SELECT * FROM Albums WHERE AlbumId = @alsBumId
+END
+CREATE PROCEDURE getAlbumSongDetailsById
+@alsBumId int
+AS
+BEGIN
+	SELECT S.SongId, S.Title,S.Song, S.Username, S.NumberOfPlays FROM Albums join Songs as S on S.AlbumId=Albums.AlbumId WHERE Albums.AlbumId = @alsBumId
+END
