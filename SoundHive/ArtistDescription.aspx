@@ -148,11 +148,11 @@
 
             </div>--%>
 
-            <div class="overview__albums">
+            <div id="tracks" class="overview__albums" runat="server">
               
           
                 
-            <div id="album" runat="server" class="album">
+            <%--<div id="album" runat="server" class="album">
                 
                 <div class="album__info">
                   
@@ -204,7 +204,7 @@
                     
                 </div>
                   
-            </div>
+            </div>--%>
                 
             </div>
               

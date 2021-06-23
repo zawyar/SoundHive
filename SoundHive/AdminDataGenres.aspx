@@ -41,7 +41,7 @@
 		
 			<br />-
 
-			<input id="File1" type="file" />
+			<asp:FileUpload id="File1" type="file" runat="server" />
 			<asp:Button ID="Button1" Cssclass="Button" runat="server" Text="Add Genre" OnClick="AddGenre_Click" />
 		</div>
    <div id="card" runat="server"  class="cards">

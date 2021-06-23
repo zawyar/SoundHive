@@ -164,6 +164,7 @@ Insert into Songs(Song,Title,Username,AlbumId,DateReleased,NumberOfPlays) values
 Insert into Songs(Song,Title,Username,AlbumId,DateReleased,NumberOfPlays) values ((Select * from OPENROWSET(BULK 'C:\One_Direction\15. Walking in the Wind.mp3',SINGLE_BLOB) as X),'Walking in the Wind','najia',2,'2015-08-01',0);
 Insert into Songs(Song,Title,Username,AlbumId,DateReleased,NumberOfPlays) values ((Select * from OPENROWSET(BULK 'C:\One_Direction\16. Wolves.mp3',SINGLE_BLOB) as X),'Wolves','najia',2,'2015-08-01',0);
 
+Update Users set ProfilePicture=(Select * from OPENROWSET(BULK 'C:\Arctic_Monkeys\alternative.jpg',SINGLE_BLOB) as X);
 
 Select * from Users
 Select * from Genres
@@ -188,25 +189,28 @@ else
 end
 
 
+drop procedure DeleteGenre
 
 create procedure DeleteGenre
-@genrename varchar(50),
+@GenreId int,
 @result int output
 as 
 begin
-if(EXISTS (select * from Genres where (GenreName=@genrename)))
+if(EXISTS (select * from Genres where (GenreId=@GenreId)))
 	begin
 	set @result=1
-	Delete from Genres where GenreName=@genrename
+	Delete from Genres where GenreId=@GenreId
 	end
 else
 	begin
 	set @result =-1
 	end
 end
+drop procedure AddGenre
 
 create procedure AddGenre
 @genrename varchar(50),
+@image varbinary(max),
 @result int output
 as 
 begin
@@ -218,7 +222,7 @@ if(EXISTS (select * from Genres where (GenreName=@genrename)))
 else
 	begin
 	set @result =1
-	insert into Genres(GenreName) values(@genrename)
+	insert into Genres(GenreName,GenreImage) values(@genrename,@image)
 	end
 end
 
@@ -260,11 +264,9 @@ begin
 				set Username=@username where Username=@usern
 				end
 		end
-		if(ISNULL(@DOB, '-1')!='-1')
-		begin
+		
 			update Users
 			set DOB=@DOB where Username=@usern
-		end
 		if(@password!='NULL')
 		begin
 			update Users
@@ -482,11 +484,18 @@ BEGIN
 	SELECT S.SongId, S.Title,S.Song, S.Username, S.NumberOfPlays FROM Albums join Songs as S on S.AlbumId=Albums.AlbumId WHERE Albums.GenreId = @GenreId
 END
 
+--Genre Description procedures
 CREATE PROCEDURE getGenreByGenreId
 @GenreId int
 AS
 BEGIN
 	SELECT G.GenreName FROM Genres as G WHERE G.GenreId = @GenreId
+END
+CREATE PROCEDURE getAlbumDetailsByGenreId
+@GenreId int
+AS
+BEGIN
+	SELECT AlbumId,Title FROM Albums WHERE GenreId = @GenreId
 END
 
 
@@ -498,8 +507,173 @@ BEGIN
 	SELECT * FROM AlbumsView WHERE Username = @Usern
 END
 
+
+
+
+CREATE PROCEDURE getArtistImgByUsername
+@Usern varchar(50)
+AS
+BEGIN
+	SELECT ProfilePicture FROM Users WHERE Username = @Usern
+END
+Select S.SongId, S.Title,S.Song, S.Username, S.NumberOfPlays from Songs as S join Albums on s.AlbumId=Albums.AlbumId where S.Title Like '%H%' or Albums.Title like '%H%' or s.Username like '%z%'
+drop PROCEDURE addAlbum
+
+CREATE PROCEDURE addAlbum
+@name varchar(50),
+@username varchar(50),
+@genreId int,
+@releaseDate date,
+@albumImage varbinary(max),
+@result int output
+as 
+begin
+if(not EXISTS (select * from Users where (username=@username)))
+	begin
+	print 'User does not exist.'
+	set @result=-2
+	return
+	end
+
+if(not EXISTS (select * from Genres where (GenreId=@genreId)))
+	begin
+	print 'Genre does not exist.'
+	set @result=-1
+	
+	end
+else
+	begin
+	set @result =1
+	insert into Albums(Title,username,GenreId,DateReleased,AlbumImage) values (@name,@username,@genreId,@releaseDate,@albumImage);
+	end
+end
+
+select * from songs
+drop PROCEDURE addSong
+
+
+CREATE PROCEDURE addSong
+@name varchar(50),
+@songfile varbinary(max),
+@username varchar(50),
+@AlbumId int,
+@releaseDate date,
+@result int output
+as 
+begin
+if(not EXISTS (select * from Users where (username=@username)))
+	begin
+	print 'User does not exist.'
+	set @result=-2
+	return
+	end
+
+if(not EXISTS (select * from Albums where (AlbumId=@AlbumId)))
+	begin
+	print 'Album does not exist.'
+	set @result=-1
+	
+	end
+else
+	begin
+	set @result =1
+	insert into Songs(Song,Title,username,AlbumId,DateReleased,NumberOfPlays) values (@songfile,@name,@username,@AlbumId,@releaseDate,0);
+	end
+end
+
+
+
+select * from Users
+
 drop procedure getAlbumDetailsByUser
 Select * from Albums
 Select * from Genres
 update Albums
 set GenreId=2 where Title='Made in the A.M'
+
+declare @output int;
+execute EditProfile @usern ='sed',@email = 'sed@gmail.com',@username = 'sed',@DOB = '1980/09/21', @password = 'user',@result= @output OUTPUT
+
+create procedure getAlbumSummary
+@username varchar(50)
+as 
+begin
+select * from Albums where Username=@username
+end
+
+--Playlist logic
+
+create procedure getAllPlaylists
+as 
+begin
+select * from Playlist_Name join Playlists on Playlist_Name.PlaylistId=Playlists.PlaylistId
+end
+
+execute getAllPlaylists
+
+create procedure createUserPlaylist
+@username varchar(50),
+@playlistname varchar(50),
+@result int output
+as 
+begin
+if(not EXISTS (select * from Users where (Users.Username=@username)))
+	begin
+	print 'User does not exist.'
+	set @result=-2
+	return
+	end
+else
+	begin
+	set @result =1
+	insert into Playlist_Name(PlaylistName,Username) values (@playlistname,@username);
+	end
+end
+declare @output int
+execute createUserPlaylist @username='sed',@playlistname='moosic',@result=@output output
+
+create procedure addSongToPlaylist
+@songId int,
+@playlistId int,
+@result int OUTPUT
+as 
+begin
+if(not EXISTS (select * from Songs where (SongId=@songId)))
+	begin
+	print 'Song does not exist.'
+	set @result=-2
+	return
+	end
+
+if(not EXISTS (select * from Playlist_Name where (PlaylistId=@playlistId)))
+	begin
+	print 'Playlist does not exist.'
+	set @result=-1
+	
+	end
+else
+	begin
+	set @result =1
+	insert into Playlists(SongId,PlaylistId) values (@songId,@playlistId);
+	end
+end
+declare @output int
+
+execute addSongToPlaylist @songId=1,@playlistId=1,@result=@output output
+
+select * from Songs
+
+drop procedure getPlaylistById
+create procedure getPlaylistById
+@playlistId int,
+@playlistImg int output
+as 
+begin
+declare @albumId int;
+set @albumId= (select top 1 songs.AlbumId from Playlist_Name join Playlists on Playlist_Name.PlaylistId=Playlists.PlaylistId join Songs on songs.SongId=Playlists.SongId)
+
+
+set @playlistImg= @albumId
+select * from Playlist_Name join Playlists on Playlist_Name.PlaylistId=Playlists.PlaylistId join Songs on songs.SongId=Playlists.SongId where Playlists.PlaylistId=@playlistId
+
+end

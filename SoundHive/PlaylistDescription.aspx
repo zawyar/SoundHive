@@ -9,29 +9,16 @@
 		
 		<div class="profile__img">
 		  
-		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScOKhSS0lUrVL39ZoGmSbOD0upmyn4sPS5-NMiKTuYFCEjStE79PSS8Rb3Jz3dbvlv6Gg&usqp=CAU" alt="Rick" />
+		<img id="Playlistimage" src="" alt="Rick" runat="server"/>
 			
 		</div>
 		  
 		<div class="artist__info__meta">
 		  
-		<div class="artist__info__type">Album</div>
+		<div class="artist__info__type">Playlist</div>
 			
-		<div class="artist__info__name"> Favourites</div>
-		<div class="artist__info__actions">
-			
-			<button class="button-dark">
-			<i class="ion-ios-play"></i>
-			Play
-			</button>
-			  
-			<button class="button-light">Add</button>
-			  
-			<button class="button-light more">
-			<i class="ion-ios-more"></i>
-			</button>
-			  
-		</div>
+		<div id="playlistname" class="artist__info__name" runat="server"></div>
+		
 			
 		</div>
 		  
@@ -50,7 +37,7 @@
 				  
 				<div class="album__tracks">
 				  
-				<div class="tracks">
+				<div id="track" class="tracks" runat="server">
 					  
 					<div class="tracks__heading">
 					  
@@ -72,7 +59,7 @@
 						
 					</div>
 
-					<div class="track">
+					<%--<div class="track">
 
 					<div class="track__number">1</div>
 
@@ -273,7 +260,7 @@
 
 					</div>
 					  
-					
+					--%>
 
 				</div>
 					

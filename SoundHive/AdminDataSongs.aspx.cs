@@ -57,10 +57,10 @@ namespace SoundHive
             {
                 while (obj.Read())
                 {
-                    title = obj.GetString(0);
-                    username = obj.GetString(1);
-                    numofplays = obj.GetInt32(2);
-                    id = obj.GetInt32(3);
+                    title = obj.GetString(1);
+                    username = obj.GetString(3);
+                    numofplays = obj.GetInt32(4);
+                    id = obj.GetInt32(0);
                     DisplayASong(i, title, username, numofplays, id);
                     i++;
                 }

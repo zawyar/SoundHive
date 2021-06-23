@@ -33,8 +33,14 @@ namespace SoundHive
 
             DAL handler = new DAL();
             string name = Genre.Text;
-
-            if (handler.AddGenre(name))
+            int bytecount=File1.PostedFile.ContentLength;
+            if (bytecount == 0)
+            {
+                GenreAlreadyExists.InnerText = "No file uploaded";
+            }
+            byte[] databytes = new byte[bytecount - 1];
+            databytes = File1.FileBytes;
+            if (handler.AddGenre(name,databytes))
             {
 
                 Response.Redirect("AdminDataGenres.aspx");
@@ -51,7 +57,7 @@ namespace SoundHive
             card.Controls.Add(new LiteralControl("<a href='GenreDescription.aspx'><div  class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'GenreImageHandler.ashx?id=" + id + "' alt=''><div id='" + id + "' class='title'>" + name + "</div></div>"));
             Button b1 = new Button();
             b1.Text = "Delete Genre";
-            b1.Width = 30;
+
 
             b1.CssClass = "Button";
             b1.CommandArgument = id.ToString();

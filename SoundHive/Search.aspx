@@ -5,12 +5,36 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
-    <div class="h1">
-         <h1> Search Results for G-Eazy</h1>
+    <div  class="h1">
+         <h1> Search Results for <span id="queryOutput"  runat="server"></span></h1>
     </div>
-       
+       <div id="track" runat="server" class="tracks">
+					  
+					<div class="tracks__heading">
+					  
+					<div class="tracks__heading__number">#</div>
+						
+					<div class="tracks__heading__title">Song</div>
+						
+					<div class="tracks__heading__length">
+						
+						<i class="ion-ios-stopwatch-outline"></i>
+						  
+					</div>
+						
+					<div class="tracks__heading__popularity">
+						
+						<i class="ion-thumbsup"></i>
+						  
+					</div>
+						
+					</div>
+			
+				
+
+				</div>
    
-    <div class="tracks">
+   <%-- <div class="tracks">
 
                   <div class="track">
 
@@ -152,5 +176,5 @@
 
                   </div>
 
-                </div>
+                </div>--%>
 </asp:Content>

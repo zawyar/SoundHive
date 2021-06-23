@@ -82,7 +82,35 @@ namespace SoundHive
 
 
         }
+        public SqlDataReader SearchSongs(string queryStr)
+        {
 
+            string query = "Select S.SongId, S.Title,S.Song, S.Username, S.NumberOfPlays from Songs as S join Albums on s.AlbumId=Albums.AlbumId where S.Title Like @qry or Albums.Title like @qry or s.Username like @qry";
+
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@qry","%"+queryStr+"%");
+
+
+
+            try
+            {
+                SqlDataReader dr = command.ExecuteReader();
+
+                return dr;
+
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while displaying Songs: " + ex.Message);
+
+                return null;
+
+
+            }
+
+
+        }
         public SqlDataReader AllSongs()
         {
 
@@ -117,6 +145,7 @@ namespace SoundHive
             string query = "Select G.GenreName, G.GenreId from Genres as G";
             SqlCommand command = new SqlCommand(query, conn);
   
+
 
 
             try
@@ -208,6 +237,30 @@ namespace SoundHive
 
 
         }
+        public SqlDataReader GetAlbumSummaryByUser(string username)
+        {
+
+            string query = "execute getAlbumSummary @username=@id";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", username);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = command.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while searching image: " + ex.Message);
+
+
+
+
+            }
+            return reader;
+
+
+        }
         public SqlDataReader GetAlbumSongsById(int albumId)
         {
 
@@ -284,7 +337,7 @@ namespace SoundHive
         public SqlDataReader GetAlbumsByUser(string usern)
         {
 
-            string query = "execute getAlbumDetailsByUsername @Usern=@name";
+            string query = "execute getAlbumDetailsByUser @Usern=@name";
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.AddWithValue("@name", usern);
             SqlDataReader reader = null;
@@ -368,8 +421,7 @@ namespace SoundHive
             command.Parameters.AddWithValue("@usrid", usrn);
             command.Parameters.AddWithValue("@usrn", username);
             command.Parameters.AddWithValue("@eml", email);
-            command.Parameters.AddWithValue("@date", DOB.ToString("yyyy/MM/dd"));
-            System.Diagnostics.Debug.WriteLine(DOB.ToString("yyyy/MM/dd"));
+            command.Parameters.AddWithValue("@date", DOB);
             command.Parameters.AddWithValue("@pwd", password);
             command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
 
@@ -453,12 +505,79 @@ namespace SoundHive
             return true;
 
         }
-
-        public bool AddGenre(string genre)
+        public bool AddSong(string name, string username, int albumId, DateTime releaseDate, byte[] song)
         {
-            string query = "execute AddGenre @GenreName =@gname, @result= @output OUTPUT";
+            string query = "execute addSong @name=@songname,@songfile=@sng,@username=@usern,@AlbumId=@album,@releaseDate=@reldat,@result=@output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@songname", name);
+            command.Parameters.AddWithValue("@usern", username);
+            command.Parameters.AddWithValue("@album", albumId);
+            command.Parameters.AddWithValue("@reldat", releaseDate);
+            command.Parameters.AddWithValue("@sng", song);
+
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) <= -1)
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while adding genre: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+
+        }
+        public bool AddAlbum(string name,string username,int genreId,DateTime releaseDate, byte[] image)
+        {
+            string query = "execute AddAlbum @name=@albumname,@username=@usern,@genreId=@genId,@releaseDate=@reldat,@albumImage=@img, @result=@output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@albumname", name);
+            command.Parameters.AddWithValue("@usern", username);
+            command.Parameters.AddWithValue("@genId", genreId);
+            command.Parameters.AddWithValue("@reldat", releaseDate);
+            command.Parameters.AddWithValue("@img", image);
+
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) <= -1)
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while adding genre: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+
+        }
+
+        public bool AddGenre(string genre,byte[] image)
+        {
+            string query = "execute AddGenre @GenreName =@gname,@Image=@img, @result=@output OUTPUT";
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.AddWithValue("@gname", genre);
+            command.Parameters.AddWithValue("@img", image);
 
             command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
 
@@ -647,7 +766,108 @@ namespace SoundHive
 
         }
 
+        //Playlist logic
+        public  bool createPlaylist(string name,string username)
+        {
+            string query = "execute createUserPlaylist @username=@usern,@playlistname=@name, @result=@output OUTPUT";
+                SqlCommand command = new SqlCommand(query, conn);
+                command.Parameters.AddWithValue("@name", name);
+                command.Parameters.AddWithValue("@usern", username);
+            
+                command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
 
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    if (Convert.ToInt32(command.Parameters["@output"].Value) <= -1)
+                    {
+                        return false;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Error while adding playlist: " + ex.Message);
+
+                    return false;
+
+
+                }
+                return true;
+
+            
+        }
+        public SqlDataReader AllPlaylists()
+        {
+            string query = "execute getAllPlaylists";
+            SqlCommand command = new SqlCommand(query, conn);
+            
+            try
+            {
+                SqlDataReader dr = command.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    return dr;
+                }
+                else
+                {
+                    return null;
+                }
+
+
+
+                //dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while displaying Playlists: " + ex.Message);
+
+                return null;
+
+
+            }
+
+        }
+
+        public SqlDataReader GetPlaylistById(int playlistId,ref int playlistImg)
+        {
+            string query = "execute getPlaylistById @playlistId= @id, @playlistImg=@output";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@id", playlistId);
+            
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                SqlDataReader dr = command.ExecuteReader();
+                playlistImg = Convert.ToInt32(command.Parameters["@output"].Value);
+                if (dr.HasRows)
+                {
+                    return dr;
+                }
+                else
+                {
+                    return null;
+                }
+
+
+
+                //dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while displaying Playlists: " + ex.Message);
+
+                return null;
+
+
+            }
+
+        }
 
         ~DAL()
         {

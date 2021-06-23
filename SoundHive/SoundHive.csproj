@@ -172,6 +172,7 @@
     <Content Include="Content\Contact\Contact.css" />
     <Content Include="ArtistDescription.aspx" />
     <Content Include="Content\Welcome\Welcome.css" />
+    <Content Include="CreatePlaylist.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Content\UploadSongs\UploadSongs.css" />
     <Content Include="edit-profile.aspx" />
@@ -195,6 +196,7 @@
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Search.aspx" />
+    <Content Include="Upload Album.aspx" />
     <Content Include="UploadSongs.aspx" />
     <Content Include="Content\Site.scss" />
     <Content Include="Contact.aspx" />
@@ -348,6 +350,13 @@
     <Compile Include="ArtistDescription.aspx.designer.cs">
       <DependentUpon>ArtistDescription.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CreatePlaylist.aspx.cs">
+      <DependentUpon>CreatePlaylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreatePlaylist.aspx.designer.cs">
+      <DependentUpon>CreatePlaylist.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -429,6 +438,13 @@
     </Compile>
     <Compile Include="SongHandler.ashx.cs">
       <DependentUpon>SongHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload Album.aspx.cs">
+      <DependentUpon>Upload Album.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload Album.aspx.designer.cs">
+      <DependentUpon>Upload Album.aspx</DependentUpon>
     </Compile>
     <Compile Include="UploadSongs.aspx.cs">
       <DependentUpon>UploadSongs.aspx</DependentUpon>

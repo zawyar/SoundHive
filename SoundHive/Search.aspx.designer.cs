@@ -13,5 +13,23 @@ namespace SoundHive
 
     public partial class Search
     {
+
+        /// <summary>
+        /// queryOutput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl queryOutput;
+
+        /// <summary>
+        /// track control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl track;
     }
 }

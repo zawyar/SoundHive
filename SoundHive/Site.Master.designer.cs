@@ -24,6 +24,15 @@ namespace SoundHive
         protected global::System.Web.UI.WebControls.ContentPlaceHolder CssContent;
 
         /// <summary>
+        /// userimage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage userimage;
+
+        /// <summary>
         /// username_placeholder control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace SoundHive
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl username_placeholder;
+
+        /// <summary>
+        /// playlists control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl playlists;
 
         /// <summary>
         /// MainContent control.

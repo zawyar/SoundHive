@@ -29,19 +29,19 @@
   
   <div class="page-flows">
   
-    <span class="flow">
+   <%-- <span class="flow">
       <i class="ion-chevron-left"></i>
     </span>
     
     <span class="flow">
       <i class="ion-chevron-right disabled"></i>
     </span>
-    
+    --%>
   </div>
     <div style="display:inline;width:25%">
-    <form action="Search" method="get" style="display:inline">
+    <form action="Search.aspx" method="get" style="display:inline">
       <div class="search" style="display:inline">
-            <input type="text" placeholder="Search" style="display:inline" />
+            <input name="query" type="text" placeholder="Search" style="display:inline" />
       </div>
 
           <input type="submit" value="search" style="display:inline" />
@@ -61,7 +61,7 @@
     
       <span class="user__info__img">
       
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/adam_proPic.jpg" alt="Profile Picture" class="img-responsive" />
+        <img id="userimage" src="" alt="Profile Picture" class="img-responsive" runat="server"/>
         
       </span>
       
@@ -139,67 +139,10 @@
             Playlists
           </div>
           
-          <div class="collapse in" id="playlists">
+          <div  class="collapse in" id="playlists" runat="server">
           
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Doo Wop</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Pop Classics</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Love $ongs</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Hipster</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>New Music Friday</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Techno Poppers</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Summer Soothers</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Hard Rap</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Pop Rap</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>5 Stars</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Dope Dancin</span>
-            </a>
-
-            <a href="playlistDescription.aspx" class="navigation__list__item">
-              <i class="ion-ios-musical-notes"></i>
-              <span>Sleep</span>
-            </a>
+            
+            
             
           </div>
 
@@ -210,7 +153,7 @@
       
     <section class="playlist">
 
-      <a href="#">
+      <a href="CreatePlaylist.aspx">
 
         <i class="ion-ios-plus-outline"></i>
 
@@ -220,40 +163,12 @@
 
     </section>
 
-    <section class="playing">
-
-      <div class="playing__art">
-
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/cputh.jpg" alt="Album Art" />
-
-      </div>
-
-      <div class="playing__song">
-
-        <a class="playing__song__name">Some Type of Love</a>
-
-        <a class="playing__song__artist">Charlie Puth</a>
-
-      </div>
-
-      <div class="playing__add">
-
-        <i class="ion-checkmark"></i>
-
-      </div>
-
-    </section>
+    
     
   </div>
   
       <form class="content__middle" runat="server">
-       
-       <div class="body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-           
-        </div>
-        <asp:ScriptManager runat="server">
+         <asp:ScriptManager runat="server">
            
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -270,6 +185,12 @@
 
             </Scripts>
         </asp:ScriptManager>
+       <div class="body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+           
+        </div>
+      
                   </form>
 
 

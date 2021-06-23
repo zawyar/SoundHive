@@ -30,10 +30,11 @@ namespace SoundHive
         }
         protected void DisplayAnArtist(string name)
         {
-            card.Controls.Add(new LiteralControl("<a href='ArtistDescription.aspx'><div class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'ArtistImageHandler.ashx?username=" + name + "' alt=''><div id = 't1' class='title'>" + name + "</div></div>	</a>"));
+            card.Controls.Add(new LiteralControl("<a href='ArtistDescription.aspx?username="+name+"'><div class='card'><div class='overlayer'><i class='far fa-play-circle'></i></div><img src = 'ArtistImageHandler.ashx?username=" + name + "' alt=''><div id = 't1' class='title'>" + name + "</div></div>	</a>"));
             Button b1 = new Button();
             b1.Text = "Delete User";
-            b1.Width = 30;
+            b1.Height = 200;
+            
       
             b1.CssClass = "Button";
             b1.CommandArgument = name.ToString();
