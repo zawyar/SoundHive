@@ -14,7 +14,7 @@ namespace SoundHive
         {
             int id = Convert.ToInt32(Request.QueryString["id"]);
             int playlistimg=-1;
-
+            addSongsButton.HRef = "AddToPlaylist.aspx?id="+id;
             DisplaySongs(id,ref playlistimg);
             Playlistimage.Src = "AlbumImageHandler.ashx?id="+id;
 

@@ -19,7 +19,8 @@
 			
 		<div id="playlistname" class="artist__info__name" runat="server"></div>
 		
-			
+				<a id="addSongsButton" class="btn btn-primary btn-success" href="" runat="server">Add Songs</a>
+
 		</div>
 		  
 		  

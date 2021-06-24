@@ -29,15 +29,16 @@ namespace SoundHive
             return command;
 
         }
-        public bool RegisterUser(string username, string email, DateTime DOB, string password)
+        public bool RegisterUser(string username, string email, DateTime DOB, string password,byte[] image)
         {
 
-            string query = "execute registerUser @email=@eml,@username=@usrn,@DOB=@date,@password=@pwd,@result= @output OUTPUT";
+            string query = "execute registerUser @email=@eml,@username=@usrn,@DOB=@date,@password=@pwd,@image=@img,@result= @output OUTPUT";
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.AddWithValue("@usrn", username);
             command.Parameters.AddWithValue("@eml", email);
             command.Parameters.AddWithValue("@date", DOB);
             command.Parameters.AddWithValue("@pwd", password);
+            command.Parameters.AddWithValue("@img", image);
             command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
 
 
@@ -868,8 +869,36 @@ namespace SoundHive
             }
 
         }
+        public bool AddSongToPlaylist(int playlistId, int songId)
+        {
+            string query = "execute addSongToPlaylist @songId=@snid,@playlistId=@pid,@result=@output OUTPUT";
+            SqlCommand command = new SqlCommand(query, conn);
+            command.Parameters.AddWithValue("@snid", songId);
+            command.Parameters.AddWithValue("@pid", playlistId);
 
-        ~DAL()
+            command.Parameters.Add("@output", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
+
+
+            try
+            {
+                command.ExecuteNonQuery();
+                if (Convert.ToInt32(command.Parameters["@output"].Value) <= -1)
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error while adding genre: " + ex.Message);
+
+                return false;
+
+
+            }
+            return true;
+        }
+            ~DAL()
         {
             
         }

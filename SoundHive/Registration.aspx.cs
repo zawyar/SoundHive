@@ -19,7 +19,9 @@ namespace SoundHive
         protected void SignUp_Click(object sender, EventArgs e)
         {
             DAL handler = new DAL();
-            if (handler.RegisterUser(username.Text, email.Text,DOB.SelectedDate, password.Value))
+            byte[] image = new byte[ImageUpload.FileContent.Length - 1];
+            image =ImageUpload.FileBytes;
+            if (handler.RegisterUser(username.Text, email.Text,DOB.SelectedDate, password.Value,image))
             {
                 Session["username"] = username.Text;
                 Response.Redirect("Dashboard.aspx");

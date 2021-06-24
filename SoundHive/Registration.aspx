@@ -92,7 +92,14 @@
 
                         <br />
                         <br />
+                         <asp:Label ID="Label9" runat="server" Cssclass="Labels" Text="Image: "></asp:Label>
 
+   <asp:FileUpload  id="ImageUpload" runat="server"></asp:FileUpload>
+        <asp:RequiredFieldValidator Cssclass="error" ID="RequiredFieldValidator7" 
+        ControlToValidate="ImageUpload"
+        runat="server" 
+        ErrorMessage="Please upload an image">
+    </asp:RequiredFieldValidator>
 
                         <br>
                         <br>

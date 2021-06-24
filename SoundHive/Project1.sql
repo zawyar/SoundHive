@@ -111,12 +111,14 @@ begin
 	end
 end
 
+drop procedure registerUser
 
 create procedure registerUser
 @email varchar(50),
 @username varchar(50),
 @DOB date,
 @password varchar(50),
+@image varbinary(max),
 @result int output
 as 
 begin
@@ -125,7 +127,7 @@ begin
 		set @result=-1
 		
 	end
-		insert into Users values(@username,@email,@DOB,@password,NULL,2)
+		insert into Users values(@username,@email,@DOB,@password,@image,2)
 	set @result=@@ROWCOUNT 
 end
 
@@ -602,11 +604,12 @@ select * from Albums where Username=@username
 end
 
 --Playlist logic
+drop procedure getAllPlaylists
 
 create procedure getAllPlaylists
 as 
 begin
-select * from Playlist_Name join Playlists on Playlist_Name.PlaylistId=Playlists.PlaylistId
+select * from Playlist_Name 
 end
 
 execute getAllPlaylists
