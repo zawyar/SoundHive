@@ -18,6 +18,10 @@ namespace SoundHive
             context.Response.ContentType = "image/jpeg";
             int id = Convert.ToInt32(context.Request.QueryString["id"]);
             byte[] image = handler.getAlbumImageFromId(id);
+            if (image == null)
+            {
+                return;
+            }
             context.Response.BinaryWrite(image);
         }
 
